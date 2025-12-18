@@ -1,65 +1,99 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <Hero />
+
+      {/* TRANSFORMATION SECTION */}
+      <section id="transformation" className="py-20 px-4 border-t border-[#192f24]">
+        <div className="max-w-[75rem] mx-auto">
+          <span className="section-label">THE PARADIGM SHIFT</span>
+          <h2 className="section-title mb-12">The Future is Conversational.</h2>
+          {/* Content */}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* KEY IMPERATIVES */}
+      <section id="imperatives" className="py-20 px-4 border-t border-[#192f24]">
+        <div className="max-w-[75rem] mx-auto">
+          <span className="section-label">STRATEGIC IMPERATIVES</span>
+          <h2 className="section-title mb-4">Key Imperatives to embrace</h2>
+          {/* Content */}
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* STRATEGIC READINESS FRAMEWORK */}
+      <section id="framework" className="py-20 px-4 border-t border-[#192f24]">
+        <div className="max-w-[75rem] mx-auto">
+          <span className="section-label">THE FRAMEWORK</span>
+          <h2 className="section-title mb-4">Strategic Readiness Framework.</h2>
+          {/* Content */}
+        </div>
+      </section>
+
+      {/* COMMON PITFALLS */}
+      <section id="pitfalls" className="py-20 px-4 border-t border-[#192f24]">
+        <div className="max-w-[75rem] mx-auto">
+          <span className="section-label">AVOID THESE MISTAKES</span>
+          <h2 className="section-title mb-12">Common Pitfalls to Avoid</h2>
+          {/* Content */}
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="py-20 px-4 border-t border-[#192f24]">
+        <div className="max-w-[75rem] mx-auto">
+          <span className="section-label">SERVICES</span>
+          <h2 className="section-title mb-4">How I Help?</h2>
+          {/* Content */}
+        </div>
+      </section>
+
+      {/* CLIENT RESULTS */}
+      <section id="results" className="py-20 px-4 border-t border-[#192f24]">
+        <div className="max-w-[75rem] mx-auto">
+          <span className="section-label">RESULTS</span>
+          <h2 className="section-title mb-4">Client Success Stories</h2>
+          {/* Content */}
+        </div>
+      </section>
+
+      {/* INSIGHTS */}
+      <section id="insights" className="py-20 px-4 border-t border-[#192f24]">
+        <div className="max-w-[75rem] mx-auto">
+          <span className="section-label">INSIGHTS</span>
+          <h2 className="section-title mb-4">Ideas, Essays & Field Notes</h2>
+          {/* Content */}
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="py-20 px-4 border-t border-[#192f24]">
+        <div className="max-w-[75rem] mx-auto">
+          <span className="section-label">ABOUT</span>
+          <h2 className="section-title mb-12">Building Readiness, Not Just Hype</h2>
+          {/* Content */}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 px-4 border-t border-[#192f24]">
+        <div className="max-w-[75rem] mx-auto">
+          <span className="section-label">FAQ</span>
+          <h2 className="section-title mb-12">Frequently Asked Questions</h2>
+          {/* Content */}
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="py-20 px-4 border-t border-[#192f24]">
+        <div className="max-w-[75rem] mx-auto">
+          <span className="section-label">GET IN TOUCH</span>
+          <h2 className="section-title mb-6">Let&apos;s Talk</h2>
+          {/* Content */}
+        </div>
+      </section>
+    </main>
   );
 }
