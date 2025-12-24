@@ -5,13 +5,13 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#0b0f0d] backdrop-blur-md overflow-hidden">
       {/* Top Border - Fades on sides */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2ecc71]/20 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--primary-green)]/20 to-transparent"></div>
 
       {/* Blur Glow Effect */}
       <div 
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[100px] rounded-full -translate-y-1/2 pointer-events-none"
         style={{
-          background: 'rgb(46, 204, 113)',
+          background: 'var(--primary-green)',
           filter: 'blur(100px)',
           opacity: 0.3,
         }}
@@ -29,10 +29,10 @@ export default function Footer() {
             
             <div className="space-y-2 text-sm ">
               <p className="text-gray-400">Remote, Global</p>
-              <p className="text-gray-400">Conversational AI Readiness</p>
+              <p className="text-gray-400">New York, USA</p>
               <a 
                 href="mailto:hello@c-com.ai" 
-                className="text-gray-300 block hover:text-[#2ecc71] transition-colors"
+                className="text-gray-300 block hover:text-[var(--primary-green)] transition-colors"
               >
                 hello@c-com.ai
               </a>
@@ -44,18 +44,13 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4 text-sm">Company</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/terms" className="hover:text-[#2ecc71] transition-colors">
+                <Link href="/terms" className="hover:text-[var(--primary-green)] transition-colors">
                   Terms & Service
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-[#2ecc71] transition-colors">
+                <Link href="/privacy" className="hover:text-[var(--primary-green)] transition-colors">
                   Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="#faq" className="hover:text-[#2ecc71] transition-colors">
-                  FAQ
                 </Link>
               </li>
             </ul>
@@ -71,9 +66,9 @@ export default function Footer() {
           
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center space-x-2 text-sm text-gray-400 hover:text-[#2ecc71] transition-colors"
+            className="flex items-center space-x-2 text-sm text-gray-400 hover:text-[var(--primary-green)] transition-colors"
           >
-            <span>Contact Us</span>
+            <span>Back To Top</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
             </svg>

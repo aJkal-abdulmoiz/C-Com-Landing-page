@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0f0d;
+  --background: #080a0d;
   --text-primary: #e5e7eb;
-  --primary-green: #2ecc71;
-  --glow-green: #4cff9a;
+  --primary-green: #06bcbd;
+  --glow-green: #06bcbd;
   --font-manrope: "Manrope", sans-serif;
 }
 
@@ -66,16 +66,16 @@ html {
   padding: 0.5rem 1rem;
   display: inline-block;
   border-radius: 9999px;
-  background: rgba(46, 204, 113, 0.1);
-  border: 1px solid rgba(46, 204, 113, 0.3);
-  box-shadow: rgb(25, 47, 36) 0px 0px 16px 0px inset;
+  background: rgba(6, 188, 189, 0.1);
+  border: 1px solid rgba(6, 188, 189, 0.3);
+  box-shadow: rgb(6, 47, 47) 0px 0px 16px 0px inset;
   margin-bottom: 1.5rem;
 }
 
 /* Button with green glow */
 .btn-primary {
   background: linear-gradient(135deg, var(--primary-green) 0%, var(--glow-green) 100%);
-  box-shadow: rgb(25, 47, 36) 0px 0px 16px 0px inset;
+  box-shadow: rgb(6, 47, 47) 0px 0px 16px 0px inset;
   color: white;
   font-weight: 600;
   padding: 1rem 2rem;
@@ -87,8 +87,8 @@ html {
 
 .btn-primary:hover {
   box-shadow: 
-    rgb(25, 47, 36) 0px 0px 16px 0px inset,
-    rgba(46, 204, 113, 0.5) 0px 0px 24px 0px;
+    rgb(6, 47, 47) 0px 0px 16px 0px inset,
+    rgba(6, 188, 189, 0.5) 0px 0px 24px 0px;
   transform: translateY(-2px);
 }
 
@@ -102,8 +102,8 @@ html {
 
 /* Card with green glow effect */
 .card-glow {
-  background: rgba(25, 47, 36, 0.3);
-  border: 1px solid rgba(46, 204, 113, 0.2);
+  background: rgba(6, 47, 47, 0.3);
+  border: 1px solid rgba(6, 188, 189, 0.2);
   border-radius: 1rem;
   padding: 2rem;
   transition: all 0.3s ease;
@@ -112,9 +112,289 @@ html {
 .card-glow:hover {
   border-color: var(--primary-green);
   box-shadow: 
-    rgb(25, 47, 36) 0px 0px 16px 0px inset,
-    rgba(46, 204, 113, 0.3) 0px 0px 32px 0px;
+    rgb(6, 47, 47) 0px 0px 16px 0px inset,
+    rgba(6, 188, 189, 0.3) 0px 0px 32px 0px;
   transform: translateY(-4px);
+}
+
+/* C-Com Solution Card - Compact version (500px max width) */
+.c-com-solution-card-compact {
+  --border-bottom-width: 1px;
+  --border-color: #222;
+  --border-left-width: 1px;
+  --border-right-width: 1px;
+  --border-style: solid;
+  --border-top-width: 1px;
+  border-radius: 16px;
+  border: var(--border-top-width) var(--border-style) var(--border-color);
+  width: 100%;
+  max-width: 500px;
+  min-height: 550px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(10, 9, 10, 0.72);
+  transition: all 0.3s ease;
+}
+.c-com-solution-card-compact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 2px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+
+@media (max-width: 640px) {
+  .c-com-solution-card-compact {
+    max-width: 100%;
+    min-height: auto;
+  }
+}
+
+/* C-Com Solution Button */
+.c-com-solution-button {
+  --border-bottom-width: 1px;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-left-width: 1px;
+  --border-right-width: 1px;
+  --border-style: solid;
+  --border-top-width: 1px;
+  backdrop-filter: blur(5px);
+  background: linear-gradient(rgba(28, 28, 28, 0.1) 0%, rgba(18, 18, 18, 0.2) 100%);
+  width: 100%;
+  border-radius: 10px;
+  border: var(--border-top-width) var(--border-style) var(--border-color);
+  box-shadow: 
+    rgba(255, 255, 255, 0.9) 0px 0.602187px 0.602187px -1.58333px inset,
+    rgba(255, 255, 255, 0.74) 0px 2.28853px 2.28853px -3.16667px inset,
+    rgba(255, 255, 255, 0.05) 0px 10px 10px -4.75px inset;
+  opacity: 1;
+  will-change: auto;
+  padding: 0 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.c-com-solution-button:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(rgba(38, 38, 38, 0.2) 0%, rgba(28, 28, 28, 0.3) 100%);
+}
+
+.c-com-paradigm-card {
+  --border-color: #222;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  /* teal gradient from bottom */
+  background: 
+    radial-gradient(
+      50% 50% at 50% 100%,
+      rgba(6, 188, 189, 0.35),
+      transparent 100%
+    ),
+    #020203;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 20px 24px;
+  height: 234px;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+.c-com-highlight-card {
+  --border-color: #222;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  /* very dark base with teal gradient from bottom */
+  background: 
+    radial-gradient(
+      50% 50% at 50% 100%,
+      rgba(6, 188, 189, 0.35),
+      transparent 100%
+    ),
+    #020203;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 24px;
+  height: 234px;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+
+
+.c-com-prerequisite-card {
+  --border-bottom-width: 1px;
+  --border-color: #222;
+  --border-left-width: 1px;
+  --border-right-width: 1px;
+  --border-style: solid;
+  --border-top-width: 1px;
+  border-radius: 16px;
+  border: var(--border-top-width) var(--border-style) var(--border-color);
+  width: 100%;
+  max-width: 500px;
+  min-height: 450px;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(10, 9, 10, 0.72);
+  transition: all 0.3s ease;
+}
+
+.c-com-prerequisite-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 2px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .c-com-prerequisite-card {
+    max-width: 100%;
+    min-height: auto;
+  }
+}
+
+.pitfall-card {
+  border: 1px solid #222;
+  border-radius: 12px;
+  background-color: rgba(10, 9, 10, 0.5);
+  backdrop-filter: blur(10px);
+  min-height: 200px;
+  transition: all 0.8s eas;
+  overflow: visible; /* Allow glow to extend beyond */
+}
+
+.ideas-essay-card {
+  background: linear-gradient(145deg, rgba(10, 9, 10, 0.6), rgba(10, 9, 10, 0.4));
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.about-highlight-card-dark {
+  background: 
+  radial-gradient(
+    50% 50% at 50% 100%,
+    rgba(6, 188, 189, 0.35),
+    transparent 100%
+  ),
+  #020203;
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card {
+  border: 1px solid #222;
+  background-color: rgba(10, 9, 10, 0.72);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  min-height: 200px;
+}
+
+.metric-card-wrapper {
+  position: relative;
+  border-radius: 16px;
+}
+
+.metric-card {
+  border: 1px solid #222;
+  background-color: rgba(10, 9, 10, 0.72);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  backdrop-filter: blur(10px);
+  text-align: left;
+  min-height: 180px;
+  box-shadow: 0 0 20px rgba(6, 188, 189, 0.15);
+  z-index: 10;
+}
+
+
+
+@keyframes voice-wave {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.8);
+  }
+}
+
+.animate-voice-wave {
+  animation: voice-wave 1.2s ease-in-out infinite;
+}
+
+@keyframes framework-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.framework-step {
+  opacity: 0;
+  animation: framework-fade-in 0.8s ease-out forwards;
+}
+
+/* Hover effect for steps */
+.framework-step:hover .w-16 {
+  transform: scale(1.1);
+  border-color: var(--primary-green);
+  transition: all 0.3s ease;
+}
+
+.framework-step:hover h3 {
+  color: var(--primary-green);
+  transition: color 0.3s ease;
 }
 
 /* 3D Perspective for rings */
