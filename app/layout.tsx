@@ -4,6 +4,7 @@ import "./globals.css";
 import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const manrope = Manrope({ 
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${manrope.variable} font-sans antialiased`}>
+      <CustomCursor />
         <Banner />
         <Navbar />
         {children}

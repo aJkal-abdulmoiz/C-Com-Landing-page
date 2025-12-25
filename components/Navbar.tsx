@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
 export default function Navbar() {
@@ -21,8 +22,8 @@ export default function Navbar() {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-20% 0px -35% 0px", // Triggers when section is in middle 45% of viewport
-      threshold: [0, 0.25, 0.5, 0.75, 1], // Multiple thresholds for better detection
+      rootMargin: "-20% 0px -35% 0px",
+      threshold: [0, 0.25, 0.5, 0.75, 1],
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
@@ -38,7 +39,6 @@ export default function Navbar() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    // Observe all sections
     const sections = ["services", "framework", "success-stories", "pitfalls", "about", "contact"];
     sections.forEach((sectionId) => {
       const element = document.getElementById(sectionId);
@@ -66,7 +66,6 @@ export default function Navbar() {
     { name: "Contact", href: "#contact" },
   ];
 
-  // Animation variants for mobile menu container
   const menuVariants: Variants = {
     closed: {
       opacity: 0,
@@ -90,7 +89,6 @@ export default function Navbar() {
     },
   };
 
-  // Animation variants for individual menu items
   const itemVariants: Variants = {
     closed: {
       opacity: 0,
@@ -109,13 +107,11 @@ export default function Navbar() {
     },
   };
 
-  // Hamburger icon variants
   const iconVariants = {
     closed: { d: "M4 6h16M4 12h16M4 18h16" },
     open: { d: "M6 18L18 6M6 6l12 12" },
   };
 
-  // Smooth scroll handler
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const targetId = href.replace("#", "");
@@ -146,14 +142,20 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo Only - Larger Size */}
           <Link 
             href="#hero" 
-            className="flex items-center space-x-2"
+            className="flex items-center"
             onClick={(e) => handleNavClick(e, "#hero")}
           >
-            <div className="text-xl md:text-2xl font-extrabold">
-              <span className="gradient-text">c-com</span>
+            <div className="bg-transparent relative w-18 h-18 md:w-26 md:h-26 transition-all duration-300">
+              <Image
+                src="/logo-og.png"
+                alt="Company logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
 
@@ -206,7 +208,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button with Animation */}
+          {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden text-white p-2 hover:text-[var(--primary-green)] transition-colors relative z-50"
@@ -232,7 +234,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu with AnimatePresence */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
