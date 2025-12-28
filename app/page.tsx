@@ -15,14 +15,12 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <ServicesSection/>
-      <FutureConversationalSection/>
-      <KeyImperativesSection/>
-      <PrerequisitesSection/>
-      <FrameworkSection/>
-      <PitfallsSection/>
-      <IdeasEssaysSection/>
       <AboutMeSection/>
+      <FutureConversationalSection/>
+      <PitfallsSection/>
+      <FrameworkSection/>
+      <ServicesSection/>
+      <IdeasEssaysSection/>
       <ClientSuccessSection/>
       <ContactSection/>
     </main>

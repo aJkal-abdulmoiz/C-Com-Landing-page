@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0b0f0d] backdrop-blur-md overflow-hidden">
+    <footer className="relative bg-[#0b0f0f] backdrop-blur-md overflow-hidden">
       {/* Top Border - Fades on sides */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--primary-green)]/20 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--primary-green)]/40 to-transparent"></div>
 
       {/* Blur Glow Effect */}
       <div 

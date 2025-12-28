@@ -65,7 +65,7 @@ export default function IdeasEssaysSection() {
   };
 
   return (
-    <section id="ideas-essays" className="md:py-24 py-12 px-4 relative overflow-hidden bg-[var(--background)]">
+    <section id="ideas-essays" className="md:py-12 py-8 px-4 relative overflow-hidden bg-[var(--background)]">
       <div className="max-w-[75rem] mx-auto relative">
         {/* Subtle background glow */}
         <div

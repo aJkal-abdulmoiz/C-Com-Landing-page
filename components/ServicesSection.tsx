@@ -5,48 +5,48 @@ import { motion, Variants } from "framer-motion";
 export default function ServicesSection() {
   const solutions = [
     {
-      title: "For Founders & Executives",
+      title: "How I partner with Business Leaders:",
       subtitle:
-        "Strategic readiness across Conversational AI capabilities, organizational alignment, and competitive positioning",
+        "Strategic readiness across conversational AI, organizational alignment, and competitive positioning.",
       features: [
         {
-          title: "Executive Strategy Sessions:",
-          desc: "1:1 and facilitated workshops to align leadership on AI vision, priorities, and investment decisions",
+          title: "Executive Discussions",
+          desc: "Align vision, priorities, and investment decisions.",
         },
         {
-          title: "Organizational Readiness Assessment:",
-          desc: "Comprehensive evaluation of capabilities, gaps, and opportunities across technology, people, and process",
+          title: "Organizational Readiness Assessment",
+          desc: "Identify capability gaps across people, process, and technology.",
         },
         {
-          title: "Strategic Framework Development:",
-          desc: "Define vision, prioritize use cases, and create roadmap aligned with business objectives",
+          title: "Strategic Framework",
+          desc: "Define vision, prioritize use cases, and align with business outcomes.",
         },
         {
-          title: "Advisory & Ongoing Support:",
-          desc: "Continuous guidance as you implement, iterate, and scale conversational capabilities",
+          title: "Ongoing Cadence",
+          desc: "Guide implementation, iteration, and scale.",
         },
       ],
     },
     {
-      title: "For Organizations",
+      title: "How I support Functional Teams:",
       subtitle:
-        "Build conversational capabilities at scale with structured implementation and governance frameworks",
+        "Building conversational capabilities at scale with structure, governance, and adoption.",
       features: [
         {
-          title: "Capability Building:",
-          desc: "Develop organizational skills, implement governance, and establish operational excellence",
+          title: "Capability Building",
+          desc: "Develop skills, operating models, and execution discipline.",
         },
         {
-          title: "Change Management & Adoption:",
-          desc: "Drive cultural adoption, workflow integration, and behavior change with sustained leadership commitment",
+          title: "Change & Adoption",
+          desc: "Drive cultural adoption, workflow integration, and behavior change.",
         },
         {
-          title: "GEO & AI Visibility Strategy:",
-          desc: "Ensure your brand appears in ChatGPT, Perplexity, Amazon Rufus, and AI-powered discovery channels",
+          title: "AI Visibility (GEO, AEO and AIO)",
+          desc: "Ensure presence across AI-powered discovery channels.",
         },
         {
-          title: "Governance & Risk Management:",
-          desc: "Build guardrails early with frameworks that evolve, ensuring responsible AI deployment at scale",
+          title: "Governance & Risk",
+          desc: "Establish guardrails early that evolve with scale.",
         },
       ],
     },
@@ -81,7 +81,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="py-20 px-4 relative overflow-hidden">
+    <section id="services" className="pt-12 pb-20 px-4 relative overflow-hidden">
       <div className="max-w-[75rem] mx-auto relative">
         {/* Bottom-left highlight behind cards */}
         <div
@@ -107,31 +107,7 @@ export default function ServicesSection() {
 
         {/* Content wrapper */}
         <div className="relative z-10">
-          {/* Top Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
-            className="flex justify-center mb-8"
-          >
-            <div className="inline-flex items-center px-6 py-2 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
-              <span className="text-[var(--primary-green)] text-sm font-medium">
-                From strategy definition to implementation, I work with Founders and Executives to build readiness
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Heading */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-6 text-white"
-          >
-            How I Help?
-          </motion.h2>
+ 
 
           {/* Cards Container */}
           <motion.div
@@ -148,7 +124,7 @@ export default function ServicesSection() {
                 className="c-com-solution-card-compact"
               >
                 {/* TOP AREA WITH FULL-WIDTH BACKGROUND IMAGE */}
-                <div className="relative h-48 w-full overflow-hidden">
+                <div className="relative h-72 w-full overflow-hidden">
                   {/* Image pattern */}
                   <div
                     className="absolute inset-0"
@@ -167,10 +143,10 @@ export default function ServicesSection() {
 
                   {/* Content overlay */}
                   <div className="relative h-full w-full px-5 py-4 flex flex-col justify-end">
-                    <h3 className="text-3xl md:text-[34px] font-bold text-white mb-1">
+                    <h3 className="text-3xl md:text-[34px] font-bold text-gray-100 mb-3">
                       {solution.title}
                     </h3>
-                    <p className="text-gray-200 text-sm md:text-[14px] leading-relaxed">
+                    <p className="text-gray-400 text-sm md:text-[16px] leading-relaxed">
                       {solution.subtitle}
                     </p>
                   </div>
@@ -216,7 +192,7 @@ export default function ServicesSection() {
 
                         <div className="flex-1">
                           <p className="text-white text-sm leading-relaxed">
-                            <span className="font-semibold">{feature.title}</span>{" "}
+                            <span className="font-semibold">{feature.title}:</span>{" "}
                             <span className="text-gray-400">{feature.desc}</span>
                           </p>
                         </div>

@@ -7,17 +7,17 @@ export default function PitfallsSection() {
     {
       title: "Underestimating Change Management",
       description:
-        "Technical implementation is easy. Cultural adoption, workflow integration and behavior change require dedicated focus and sustained leadership commitment.",
+        "AI reshapes decisions, workflows and value creation. Ignoring change management means systems go unused.",
     },
     {
-      title: "Ignoring Governance Until it's too Late",
+      title: "Mistaking Speed for Strategy",
       description:
-        "Waiting to establish guardrails until after deployment creates risk and slows momentum. Build governance frameworks early, even if they evolve over time.",
+        "Rushing to 'keep up' produces activities, not outcomes. Speed without purpose can make advantage disappear.",
     },
     {
-      title: "Treating AI as IT's Problem",
+      title: "Deferring Governance Until Failure",
       description:
-        "Conversational AI strategy requires cross-functional leadership. Cross functional units must all have voice and accountability in shaping adoption.",
+        "Late guardrails increase risk and slow progress. Governance must evolve alongside capability.",
     },
   ];
 
@@ -50,14 +50,14 @@ export default function PitfallsSection() {
   };
 
   return (
-    <section id="pitfalls" className="py-20 px-4 relative overflow-hidden bg-[var(--background)]">
+    <section id="pitfalls" className="pb-20 px-4 relative overflow-hidden bg-[var(--background)]">
       <div className="max-w-[75rem] mx-auto relative">
-        {/* Background glow effects */}
+        {/* Background glow effects - subtle to blend with above section */}
         <div
           className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(6,188,189,0.1), transparent 70%)",
+              "radial-gradient(circle, rgba(6,188,189,0.08), transparent 70%)",
             filter: "blur(100px)",
             opacity: 0.5,
           }}
@@ -65,54 +65,17 @@ export default function PitfallsSection() {
 
         {/* Content wrapper */}
         <div className="relative z-10">
-          {/* Top Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
-            className="flex justify-center mb-8"
-          >
-            <div className="inline-flex items-center px-6 py-2 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
-              <span className="text-[var(--primary-green)] text-sm font-medium">
-                Critical Insights
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Heading */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-6 text-white"
-          >
-            Common Pitfalls to Avoid
-          </motion.h2>
-
-          {/* Subtitle */}
+          {/* Title and Body - No badge for seamless integration */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="mb-12"
+            transition={{ duration: 0.8 }}
+            className="mb-12 max-w-4xl mx-auto"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-4">
-              The Technology-First Trap
-            </h3>
-            <div className="max-w-4xl mx-auto space-y-3 text-center">
-              <p className="text-base text-gray-300">
-                Many organizations rush to implement latest AI models without defining clear business outcomes.
-              </p>
-              <p className="text-base text-gray-300">
-                Technology becomes the strategy rather than serving it.
-              </p>
-              <p className="text-base text-gray-300">
-                Successful deployments start with the problem, not the solution. And focus on delivering measurable value to specific user segments.
-              </p>
-            </div>
+            <p className="text-base md:text-lg text-gray-300 text-center leading-relaxed">
+              Competitive pressure can push organizations to adopt AI tools quickly. When business outcomes are not defined, AI becomes an experiment and soon changes into wasted effort, stalled adoption and unrealized promise.
+            </p>
           </motion.div>
 
           {/* Warning Icon - centered with URGENT GLOW */}
@@ -120,7 +83,7 @@ export default function PitfallsSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="flex justify-center mb-12"
           >
             <div className="relative">
@@ -147,7 +110,7 @@ export default function PitfallsSection() {
                   scale: [1, 1.1, 1],
                 }}
                 transition={{
-                  duration: 8,
+                  duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}

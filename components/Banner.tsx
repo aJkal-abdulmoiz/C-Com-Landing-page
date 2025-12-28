@@ -13,7 +13,7 @@ export default function Banner() {
     >
       <div className="text-center">
         <p className="text-white text-sm md:text-base font-medium flex items-center justify-center flex-wrap gap-1">
-        <span className="md:block hidden">The era of Conversational AI is here. Is your organization ready to lead?</span>
+        <span className="md:block hidden">The Future is Conversational. Are you ready to lead?</span>
 
           <span className="inline-flex items-center whitespace-nowrap">
             🚀

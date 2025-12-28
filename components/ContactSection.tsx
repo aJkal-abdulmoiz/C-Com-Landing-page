@@ -10,8 +10,6 @@ export default function ContactSection() {
     companyName: "",
     email: "",
     phone: "",
-    businessType: "",
-    hearAbout: "",
     details: "",
   });
 
@@ -97,7 +95,7 @@ export default function ContactSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-center text-gray-400 text-sm md:text-base mb-12 max-w-2xl mx-auto"
           >
-            If you&apos;re thinking seriously about Conversational AI, or worried you should be - let&apos;s start a conversation. I work with leaders who want to move beyond experimentation to build genuine strategic readiness.
+           Thinking about Conversational Commerce and what comes next? Let&apos;s connect. I work with leaders who want clarity, direction and readiness beyond experimentation.
           </motion.p>
 
           {/* Form Card */}
@@ -175,15 +173,14 @@ export default function ContactSection() {
                   <p className="text-xs text-red-500 mt-1.5">Please provide your business email</p>
                 </motion.div>
 
-                {/* Mobile Phone */}
+                {/* Mobile Phone - NOW OPTIONAL */}
                 <motion.div variants={itemVariants}>
                   <label className="block text-sm font-medium text-white -mb-2">
-                    Mobile phone number <span className="text-red-500">*</span>
+                    Mobile phone number <span className="text-gray-500 text-xs">(optional)</span>
                   </label>
                   <input
                     type="tel"
                     name="phone"
-                    required
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/95 border border-gray-300 rounded-xl text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[var(--primary-green)] focus:bg-white focus:ring-4 focus:ring-[var(--primary-green)]/10 transition-all"
@@ -191,58 +188,10 @@ export default function ContactSection() {
                   />
                 </motion.div>
 
-                {/* Business Type */}
-                <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium text-white -mb-2">
-                    What type of Business are you? <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    name="businessType"
-                    required
-                    value={formData.businessType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#333] rounded-xl text-gray-200 text-sm focus:outline-none focus:border-[var(--primary-green)] focus:ring-4 focus:ring-[var(--primary-green)]/10 transition-all appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3cpath%20fill%3D%22%2306bcbd%22%20d%3D%22M10.293%203.293L6%207.586%201.707%203.293A1%201%200%2000.293%204.707l5%205a1%201%200%20001.414%200l5-5a1%201%200%2010-1.414-1.414z%22%2F%3E%3c%2Fsvg%3E')] bg-[length:12px] bg-[position:right_1rem_center] bg-no-repeat"
-                  >
-                    <option value="" className="bg-[#1a1a1a] text-gray-400">Please Select</option>
-                    <option value="brand" className="bg-[#1a1a1a]">Brand</option>
-                    <option value="fmcg" className="bg-[#1a1a1a]">FMCG</option>
-                    <option value="retailer" className="bg-[#1a1a1a]">Retailer</option>
-                    <option value="agency" className="bg-[#1a1a1a]">Agency</option>
-                    <option value="service-provider" className="bg-[#1a1a1a]">Service Provider</option>
-                    <option value="other" className="bg-[#1a1a1a]">Other</option>
-                  </select>
-                </motion.div>
-
-                {/* How did you hear */}
-                <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium text-white -mb-2">
-                    How did you hear about us? <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    name="hearAbout"
-                    required
-                    value={formData.hearAbout}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#333] rounded-xl text-gray-200 text-sm focus:outline-none focus:border-[var(--primary-green)] focus:ring-4 focus:ring-[var(--primary-green)]/10 transition-all appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3cpath%20fill%3D%22%2306bcbd%22%20d%3D%22M10.293%203.293L6%207.586%201.707%203.293A1%201%200%2000.293%204.707l5%205a1%201%200%20001.414%200l5-5a1%201%200%2010-1.414-1.414z%22%2F%3E%3c%2Fsvg%3E')] bg-[length:12px] bg-[position:right_1rem_center] bg-no-repeat"
-                  >
-                    <option value="" className="bg-[#1a1a1a] text-gray-400">Please Select</option>
-                    <option value="chatgpt" className="bg-[#1a1a1a]">ChatGPT</option>
-                    <option value="google" className="bg-[#1a1a1a]">Google</option>
-                    <option value="linkedin" className="bg-[#1a1a1a]">LinkedIn</option>
-                    <option value="friend" className="bg-[#1a1a1a]">From a Friend</option>
-                    <option value="event" className="bg-[#1a1a1a]">Met the Team at an Event</option>
-                    <option value="podcast" className="bg-[#1a1a1a]">Podcast</option>
-                    <option value="perplexity" className="bg-[#1a1a1a]">Perplexity</option>
-                    <option value="webinar" className="bg-[#1a1a1a]">Webinar</option>
-                    <option value="reddit" className="bg-[#1a1a1a]">Reddit</option>
-                    <option value="other" className="bg-[#1a1a1a]">Other</option>
-                  </select>
-                </motion.div>
-
                 {/* More Details */}
                 <motion.div variants={itemVariants}>
                   <label className="block text-sm font-medium text-white mb-2">
-                    More Details
+                    Additional Details
                   </label>
                   <textarea
                     name="details"

@@ -7,22 +7,26 @@ export default function Hero() {
           {/* Left Side - Text Content */}
           <div className="space-y-6 lg:pr-8">
             {/* Top Badge */}
-            <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
+            {/* <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
               <svg className="w-4 h-4 text-[var(--primary-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               <span className="text-[var(--primary-green)] text-xs font-semibold">Conversational AI Readiness</span>
-            </div>
+            </div> */}
 
             {/* Main Heading */}
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-[58px] font-bold leading-tight mb-4">
-                <span className="text-white">Are You Ready for</span>
+                <span className="text-white">Is your Business ready for</span>
                 <br />
                 <span className="gradient-text">Conversational AI?</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                The shift from traditional interfaces to intelligent conversations is accelerating. Is your business ready? Organizations that understand this transformation will lead tomorrow&apos;s markets.
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed text-left">
+              Search interfaces are fading. 
+              Traditional media models are becoming obsolete.
+              eCommerce is giving way to conversational commerce. 
+              AI-driven interactions are rising.
+              Those who adapt now will lead tomorrow’s markets.
               </p>
             </div>
 
@@ -52,7 +56,7 @@ export default function Hero() {
                   boxShadow: 'rgba(255, 255, 255, 0.9) 0px 0.602187px 0.602187px -1.58333px inset, rgba(255, 255, 255, 0.74) 0px 2.28853px 2.28853px -3.16667px inset, rgba(255, 255, 255, 0.05) 0px 10px 10px -4.75px inset',
                 }}
               >
-                <span>Work With Me</span>
+                <span>Let’s Talk</span>
               </a>
             </div>
           </div>
@@ -109,7 +113,7 @@ export default function Hero() {
               {/* Conversation Bubbles */}
               <div className="absolute top-[15%] left-[10%] animate-float-bubble">
                 <div className="bg-[var(--primary-green)]/10 border border-[var(--primary-green)]/30 rounded-2xl rounded-tr-sm px-4 py-2 backdrop-blur-sm">
-                  <p className="text-[var(--primary-green)] text-xs font-medium">Context</p>
+                  <p className="text-white text-xs font-medium">Context</p>
                 </div>
               </div>
 
@@ -121,7 +125,7 @@ export default function Hero() {
 
               <div className="absolute bottom-[25%] left-[15%] animate-float-bubble delay-400">
                 <div className="bg-[var(--primary-green)]/10 border border-[var(--primary-green)]/30 rounded-2xl rounded-tr-sm px-4 py-2 backdrop-blur-sm">
-                  <p className="text-[var(--primary-green)] text-xs font-medium">Conversations</p>
+                  <p className="text-white text-xs font-medium">Conversations</p>
                 </div>
               </div>
 

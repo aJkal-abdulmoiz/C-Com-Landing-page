@@ -129,8 +129,8 @@ html {
   border: var(--border-top-width) var(--border-style) var(--border-color);
   width: 100%;
   max-width: 500px;
-  min-height: 550px;
-  max-height: 600px;
+  min-height: 500px;
+  max-height: 550px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -212,7 +212,7 @@ html {
   justify-content: flex-start;
   gap: 10px;
   padding: 20px 24px;
-  height: 234px;
+  height: 204px;
   position: relative;
   overflow: hidden;
   will-change: transform;

@@ -39,7 +39,7 @@ export default function Navbar() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    const sections = ["services", "framework", "success-stories", "pitfalls", "about", "contact"];
+    const sections = ["about", "future-conversational", "framework", "pitfalls", "success-stories", "contact"];
     sections.forEach((sectionId) => {
       const element = document.getElementById(sectionId);
       if (element) {
@@ -58,11 +58,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Framework", href: "#framework" },
-    { name: "Insights", href: "#pitfalls" },
-    { name: "About", href: "#about" },
-    { name: "Results", href: "#success-stories" },
+    { name: "About Me", href: "#about" },
+    { name: "Why Now?", href: "#future-conversational" },
+    { name: "How I Help?", href: "#framework" },
+    { name: "Insights", href: "#ideas-essays" },
+    { name: "Impact", href: "#success-stories" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -145,10 +145,10 @@ export default function Navbar() {
           {/* Logo Only - Larger Size */}
           <Link 
             href="#hero" 
-            className="flex items-center"
+            className="flex items-center -ml-[25px]"
             onClick={(e) => handleNavClick(e, "#hero")}
           >
-            <div className="bg-transparent relative w-18 h-18 md:w-26 md:h-26 transition-all duration-300">
+            <div className="bg-transparent relative w-32 h-32 md:w-42 md:h-42 transition-all duration-300">
               <Image
                 src="/logo-og.png"
                 alt="Company logo"
