@@ -129,8 +129,8 @@ html {
   border: var(--border-top-width) var(--border-style) var(--border-color);
   width: 100%;
   max-width: 500px;
-  min-height: 500px;
-  max-height: 550px;
+  min-height: 400px;
+  max-height: 450px;
   display: flex;
   flex-direction: column;
   position: relative;

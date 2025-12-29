@@ -135,7 +135,7 @@ export default function FutureConversationalSection() {
           transition={{ duration: 0.8, delay: 0.15 }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-10"
         >
-          Because the Future is Conversational
+          The Future is Conversational
 
         </motion.h2>
         {/* copy (left) + animated voice visual (right) */}

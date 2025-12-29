@@ -89,7 +89,7 @@ export default function IdeasEssaysSection() {
             className="flex justify-center mb-8"
           >
             <div className="inline-flex items-center px-6 py-2 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
-              <span className="text-[var(--primary-green)] text-sm font-medium">
+              <span className="text-[var(--primary-green)] text-sm font-medium uppercase">
                 Thought Leadership
               </span>
             </div>
@@ -103,7 +103,7 @@ export default function IdeasEssaysSection() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white text-center"
           >
-            Ideas, Essays & Field Notes
+            Ideas & Essays
           </motion.h2>
 
           {/* Subtitle */}
@@ -123,7 +123,7 @@ export default function IdeasEssaysSection() {
             >
               farazsid.substack.com
             </a>{" "}
-            where I write regularly about Conversational AI, leadership, and the evolving relationship between humans and intelligent systems.
+            where I write regularly about Conversational Commerce and the evolving relationship between humans & agents.
           </motion.p>
 
           {/* Article Cards Grid */}

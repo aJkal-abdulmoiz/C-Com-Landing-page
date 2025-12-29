@@ -59,10 +59,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "About Me", href: "#about" },
-    { name: "Why Now?", href: "#future-conversational" },
-    { name: "How I Help?", href: "#framework" },
+    { name: "Why Now", href: "#future-conversational" },
+    { name: "How I Help", href: "#framework" },
     { name: "Insights", href: "#ideas-essays" },
-    { name: "Impact", href: "#success-stories" },
+    { name: "Testimonials", href: "#success-stories" },
     { name: "Contact", href: "#contact" },
   ];
 

@@ -16,18 +16,20 @@ export default function Hero() {
 
             {/* Main Heading */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-[58px] font-bold leading-tight mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-[58px] font-bold leading-tight mb-4 mt-8 md:mt-0">
                 <span className="text-white">Is your Business ready for</span>
                 <br />
                 <span className="gradient-text">Conversational AI?</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed text-left">
-              Search interfaces are fading. 
-              Traditional media models are becoming obsolete.
-              eCommerce is giving way to conversational commerce. 
-              AI-driven interactions are rising.
-              Those who adapt now will lead tomorrow’s markets.
-              </p>
+              <div className="space-y-2 text-lg md:text-xl text-gray-300 leading-relaxed text-left">
+    
+              <p>Search interfaces are fading.</p>
+              <p>Traditional media models are becoming obsolete. </p>
+              <p>eCommerce is giving way to conversational commerce.</p>
+              <p>AI-driven interactions are rising.</p>
+              <p>Those who adapt now will lead tomorrow’s markets.</p>
+            
+              </div>
             </div>
 
             {/* CTA Buttons - Inline Tailwind Styles */}

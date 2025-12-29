@@ -178,7 +178,7 @@ export default function FrameworkSection() {
             className="flex justify-center mb-8"
           >
             <div className="inline-flex items-center px-6 py-2 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
-              <span className="text-[var(--primary-green)] text-sm font-medium">
+              <span className="text-[var(--primary-green)] text-sm font-medium uppercase">
                 Strategic Approach
               </span>
             </div>
@@ -203,7 +203,7 @@ export default function FrameworkSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-center text-gray-400 text-base md:text-lg mb-16 max-w-3xl mx-auto"
           >
-            Conversational AI opportunity isn&apos;t adopting AI faster, it is adopting it with intention. This framework helps assess current state and embark with a purpose.
+            Conversational Commerce opportunity isn&apos;t adopting AI faster, it is adopting it with intention. This framework helps assess current state and embark with a purpose.
           </motion.p>
 
           {/* Timeline Container */}
@@ -320,21 +320,10 @@ export default function FrameworkSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl font-bold text-center text-white mb-3"
+              className="text-3xl md:text-4xl font-bold text-center text-white mb-8"
             >
-              AI across the Value Chain
+              Areas of focus across the Value Chain
             </motion.h3>
-
-            {/* Body text */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="text-center text-gray-400 max-w-2xl mx-auto mb-12 text-base md:text-lg"
-            >
-              AI isn&apos;t a layer, it&apos;s the connective tissue.
-            </motion.p>
 
             {/* Four cards grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

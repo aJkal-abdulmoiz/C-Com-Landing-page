@@ -68,8 +68,8 @@ export default function ClientSuccessSection() {
             className="flex justify-center mb-8"
           >
             <div className="inline-flex items-center px-6 py-2 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
-              <span className="text-[var(--primary-green)] text-sm font-medium">
-              Impact and Testimonials
+              <span className="text-[var(--primary-green)] text-sm font-medium uppercase">
+              Testimonials
               </span>
             </div>
           </motion.div>

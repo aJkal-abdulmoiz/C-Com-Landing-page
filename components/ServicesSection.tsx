@@ -46,7 +46,7 @@ export default function ServicesSection() {
         },
         {
           title: "Governance & Risk",
-          desc: "Establish guardrails early that evolve with scale.",
+          desc: "Establish guardrails early.",
         },
       ],
     },
@@ -124,7 +124,7 @@ export default function ServicesSection() {
                 className="c-com-solution-card-compact"
               >
                 {/* TOP AREA WITH FULL-WIDTH BACKGROUND IMAGE */}
-                <div className="relative h-72 w-full overflow-hidden">
+                <div className="relative h-52 w-full overflow-hidden">
                   {/* Image pattern */}
                   <div
                     className="absolute inset-0"
@@ -146,22 +146,11 @@ export default function ServicesSection() {
                     <h3 className="text-3xl md:text-[34px] font-bold text-gray-100 mb-3">
                       {solution.title}
                     </h3>
-                    <p className="text-gray-400 text-sm md:text-[16px] leading-relaxed">
-                      {solution.subtitle}
-                    </p>
                   </div>
                 </div>
 
                 {/* LOWER CONTENT (inside card body) */}
                 <div className="relative z-10 flex flex-col h-full px-5 pb-5">
-                  {/* Divider with Features label */}
-                  <div className="flex items-center mb-4">
-                    <div className="h-[1px] bg-[#222] flex-1" />
-                    <span className="px-3 text-xs text-gray-600 uppercase tracking-wider">
-                      What&apos;s included
-                    </span>
-                    <div className="h-[1px] bg-[#222] flex-1" />
-                  </div>
 
                   {/* Features List */}
                   <div className="space-y-4 mb-6 flex-1">

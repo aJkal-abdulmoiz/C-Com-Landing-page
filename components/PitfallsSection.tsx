@@ -63,6 +63,15 @@ export default function PitfallsSection() {
           }}
         />
 
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+              className="text-3xl md:text-4xl font-bold text-left text-white mb-6"
+            >
+              Common Pitfalls To Avoid
+            </motion.h3>
         {/* Content wrapper */}
         <div className="relative z-10">
           {/* Title and Body - No badge for seamless integration */}
@@ -71,20 +80,20 @@ export default function PitfallsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
-            className="mb-12 max-w-4xl mx-auto"
+            className="mb-12 max-w-5xl mr-auto"
           >
-            <p className="text-base md:text-lg text-gray-300 text-center leading-relaxed">
-              Competitive pressure can push organizations to adopt AI tools quickly. When business outcomes are not defined, AI becomes an experiment and soon changes into wasted effort, stalled adoption and unrealized promise.
-            </p>
-          </motion.div>
-
-          {/* Warning Icon - centered with URGENT GLOW */}
-          <motion.div
+            <div className="flex md:justify-between md:items-start items-center justify-center md:flex-row flex-col-reverse">
+            <div className="space-y-4 text-base md:text-lg text-gray-300 text-left leading-relaxed">
+              <p>Competitive pressure can push organizations to adopt AI tools quickly.</p>
+              <p>When business outcomes are not defined, AI becomes an experiment and soon changes into wasted effort, stalled adoption and unrealized promise.</p> 
+            </div>
+     {/* Warning Icon - centered with URGENT GLOW */}
+     <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex justify-center mb-12"
+            className="flex justify-center mb-12 md:-mt-[46px]"
           >
             <div className="relative">
               {/* Outer pulsing ring */}
@@ -114,7 +123,7 @@ export default function PitfallsSection() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="w-16 h-16 md:w-20 md:h-20 relative z-10"
+                className="w-16 h-16 md:w-26 md:h-26 relative z-10"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -198,6 +207,10 @@ export default function PitfallsSection() {
               />
             </div>
           </motion.div>
+            </div>
+          </motion.div>
+
+     
 
           {/* Cards Grid */}
           <motion.div
@@ -205,7 +218,7 @@ export default function PitfallsSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 "
           >
             {pitfalls.map((pitfall, idx) => (
               <motion.div

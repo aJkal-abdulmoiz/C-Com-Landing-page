@@ -34,7 +34,7 @@ export default function AboutMeSection() {
           <polyline points="22 4 12 14.01 9 11.01" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
-      title: "Focused on Value creation",
+      title: "Value creation Focus",
       description:
         "Building sustainable advantage through systematic readiness, not short-term demonstrations.",
     },
@@ -89,7 +89,7 @@ export default function AboutMeSection() {
           className="flex justify-center mb-8"
         >
           <div className="inline-flex items-center px-6 py-2 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
-            <span className="text-[var(--primary-green)] text-sm font-medium">
+            <span className="text-[var(--primary-green)] text-sm font-medium uppercase">
               About Me
             </span>
           </div>
