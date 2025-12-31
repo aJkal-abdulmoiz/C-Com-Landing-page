@@ -1,9 +1,10 @@
 'use client'
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0b0f0f] backdrop-blur-md overflow-hidden">
+    <footer className="relative backdrop-blur-md overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       {/* Top Border - Fades on sides */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--primary-green)]/40 to-transparent"></div>
 
@@ -17,15 +18,26 @@ export default function Footer() {
         }}
       ></div>
 
-      <div className="relative max-w-[75rem] mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+      <div className="relative max-w-[75rem] mx-auto px-6 py-6">
+        <div className="flex md:flex-row justify-between items-start gap-8">
           
           {/* Left Side - Logo & Contact */}
           <div className="space-y-4">
-            <div className="text-2xl font-bold">
-              <span className="gradient-text">c-com</span>
-              <span className="text-white">.ai</span>
-            </div>
+            <Link 
+              href="#hero" 
+              className="flex items-center -ml-[18px]"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              <div className="bg-transparent relative w-24 h-24 md:w-32 md:h-32 transition-all duration-300">
+                <Image
+                  src="/logo-og.png"
+                  alt="c-com.ai logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
             
             <div className="space-y-2 text-sm ">
               <p className="text-gray-400">Remote, Global</p>
@@ -40,8 +52,8 @@ export default function Footer() {
           </div>
 
           {/* Right Side - Company Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4 text-sm">Company</h3>
+          <div className="flex flex-col justify-end items-start mt-auto">
+          <h3 className="font-semibold mb-4 text-sm" style={{ color: 'var(--text-primary)' }}>Company</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link href="/terms" className="hover:text-[var(--primary-green)] transition-colors">

@@ -81,7 +81,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="pt-12 pb-20 px-4 relative overflow-hidden">
+    <section id="services" className="pt-12 pb-20 px-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-[75rem] mx-auto relative">
         {/* Bottom-left highlight behind cards */}
         <div
@@ -107,8 +107,6 @@ export default function ServicesSection() {
 
         {/* Content wrapper */}
         <div className="relative z-10">
- 
-
           {/* Cards Container */}
           <motion.div
             variants={containerVariants}
@@ -127,23 +125,15 @@ export default function ServicesSection() {
                 <div className="relative h-52 w-full overflow-hidden">
                   {/* Image pattern */}
                   <div
-                    className="absolute inset-0"
-                    style={{
-                      backgroundImage:
-                        "url('/bg-pattern.webp')",
-                      backgroundRepeat: "repeat",
-                      backgroundPosition: "left top",
-                      backgroundSize: "160px 160px",
-                      opacity: 0.6,
-                    }}
+                    className="absolute inset-0 service-card-pattern"
                   />
 
                   {/* Bottom fade to card background */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-[rgba(11,15,13,1)]" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 service-card-fade" />
 
                   {/* Content overlay */}
                   <div className="relative h-full w-full px-5 py-4 flex flex-col justify-end">
-                    <h3 className="text-3xl md:text-[34px] font-bold text-gray-100 mb-3">
+                    <h3 className="text-3xl md:text-[34px] font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
                       {solution.title}
                     </h3>
                   </div>
@@ -151,7 +141,6 @@ export default function ServicesSection() {
 
                 {/* LOWER CONTENT (inside card body) */}
                 <div className="relative z-10 flex flex-col h-full px-5 pb-5">
-
                   {/* Features List */}
                   <div className="space-y-4 mb-6 flex-1">
                     {solution.features.map((feature, fIdx) => (
@@ -180,9 +169,9 @@ export default function ServicesSection() {
                         </div>
 
                         <div className="flex-1">
-                          <p className="text-white text-sm leading-relaxed">
+                          <p className="text-sm leading-relaxed" style={{ color: 'var(--text-primary)' }}>
                             <span className="font-semibold">{feature.title}:</span>{" "}
-                            <span className="text-gray-400">{feature.desc}</span>
+                            <span style={{ opacity: 0.7 }}>{feature.desc}</span>
                           </p>
                         </div>
                       </motion.div>
@@ -207,3 +196,4 @@ export default function ServicesSection() {
     </section>
   );
 }
+  

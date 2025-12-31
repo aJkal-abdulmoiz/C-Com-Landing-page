@@ -2,6 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutMeSection() {
   const highlights = [
@@ -67,13 +68,12 @@ export default function AboutMeSection() {
   };
 
   return (
-    <section id="about" className="pt-6  pb-32 px-4 relative overflow-hidden bg-[var(--background)]">
+    <section id="about" className="pt-6 pb-32 px-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       {/* Background glow */}
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full"
         style={{
-          background:
-            "radial-gradient(circle, rgba(6,188,189,0.12), transparent 70%)",
+          background: "radial-gradient(circle, rgba(6,188,189,0.12), transparent 70%)",
           filter: "blur(100px)",
           opacity: 0.6,
         }}
@@ -95,28 +95,17 @@ export default function AboutMeSection() {
           </div>
         </motion.div>
 
-        {/* Heading */}
-        {/* <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl md:text-5xl font-bold text-white mb-12 text-center"
-        >
-          About Me
-        </motion.h2> */}
-
         {/* Main content - Grid layout */}
         <div className="grid lg:grid-cols-[280px_1fr] gap-10 lg:gap-12 items-start mb-12">
-          {/* Left: Circular Image */}
+          {/* Left: Circular Image + LinkedIn */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative mx-auto lg:mx-0"
+            className="relative mx-auto lg:mx-0 flex flex-col items-center gap-4"
           >
-            <div className="relative w-64 h-64 lg:w-72 lg:h-72">
+            <div className="relative w-64 h-64 lg:w-68 lg:h-68">
               {/* Circular image */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-4 border-[var(--primary-green)]/20">
                 <Image
@@ -131,12 +120,27 @@ export default function AboutMeSection() {
               <div
                 className="absolute -inset-2 rounded-full -z-10"
                 style={{
-                  background:
-                    "radial-gradient(circle, rgba(6,188,189,0.3), transparent 70%)",
+                  background: "radial-gradient(circle, rgba(6,188,189,0.3), transparent 70%)",
                   filter: "blur(20px)",
                 }}
               />
             </div>
+
+            {/* LinkedIn Icon */}
+            <Link
+              href="https://www.linkedin.com/in/faraz-siddiqui-4189692/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 rounded-md transition-all duration-300 hover:scale-110"
+              style={{
+                backgroundColor: '#0077B5',
+              }}
+              aria-label="Connect on LinkedIn"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24" focusable="false">
+                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+              </svg>
+            </Link>
           </motion.div>
 
           {/* Right: Content */}
@@ -147,25 +151,25 @@ export default function AboutMeSection() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="space-y-6"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
-            I dont’ just advise the shift. I build it
+            <h3 className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            I build for the shift through experience and execution
             </h3>
 
-            <div className="space-y-4 text-sm md:text-base text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-sm md:text-base leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.8 }}>
               <p>
-              I work with Leadership teams to operationalize conversational AI - moving it from concept to capability.
+                I work with Leadership teams to operationalize conversational AI - moving it from concept to capability.
               </p>
               <p>
-              My experience sits at the interaction of <b>Technology</b>, <b>Business outcomes</b> and <b>Human behavior</b>.
+                My experience sits at the interaction of <b>Technology</b>, <b>Business outcomes</b> and <b>Human behavior</b>.
               </p>
-              <p>       
-              I replace hype with organizational, strategic and cultural readiness, focusing on what makes AI stick inside organizations. 
+              <p>
+                I replace hype with organizational, strategic and cultural readiness, focusing on what makes AI stick inside organizations.
               </p>
-              <p>       
-              The proof of my approach lies in execution: scaling a tech startup early in my career, and establishing eCommerce as a true competitive advantage in enterprise settings.  
+              <p>
+                The proof of my approach lies in execution: scaling a tech startup early in my career, and establishing eCommerce as a true competitive advantage in enterprise settings.
               </p>
-              <p className="text-white font-medium">
-              The leaders I work with want more than demos and pilot projects. They’re building durable advantage through conversational interfaces. 
+              <p className="font-medium" style={{ color: 'var(--text-primary)', opacity: 1 }}>
+                The leaders I work with want more than demos and pilot projects. They&apos;re building durable advantage through conversational interfaces.
               </p>
             </div>
           </motion.div>
@@ -190,11 +194,11 @@ export default function AboutMeSection() {
                 {item.icon}
               </div>
 
-              <h4 className="text-base md:text-lg font-bold text-white mb-2 leading-tight">
+              <h4 className="text-base md:text-lg font-bold mb-2 leading-tight" style={{ color: 'var(--text-primary)' }}>
                 {item.title}
               </h4>
 
-              <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
+              <p className="text-xs md:text-sm leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.7 }}>
                 {item.description}
               </p>
             </motion.div>

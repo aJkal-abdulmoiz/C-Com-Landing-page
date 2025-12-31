@@ -50,28 +50,29 @@ export default function PitfallsSection() {
   };
 
   return (
-    <section id="pitfalls" className="pb-20 px-4 relative overflow-hidden bg-[var(--background)]">
+    <section id="pitfalls" className="pb-20 px-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-[75rem] mx-auto relative">
         {/* Background glow effects - subtle to blend with above section */}
         <div
           className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full"
           style={{
-            background:
-              "radial-gradient(circle, rgba(6,188,189,0.08), transparent 70%)",
+            background: "radial-gradient(circle, rgba(6,188,189,0.08), transparent 70%)",
             filter: "blur(100px)",
             opacity: 0.5,
           }}
         />
 
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl font-bold text-left text-white mb-6"
-            >
-              Common Pitfalls To Avoid
-            </motion.h3>
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl md:text-4xl font-bold text-left mb-6"
+          style={{ color: 'var(--text-primary)' }}
+        >
+          Common Pitfalls To Avoid
+        </motion.h3>
+
         {/* Content wrapper */}
         <div className="relative z-10">
           {/* Title and Body - No badge for seamless integration */}
@@ -83,134 +84,130 @@ export default function PitfallsSection() {
             className="mb-12 max-w-5xl mr-auto"
           >
             <div className="flex md:justify-between md:items-start items-center justify-center md:flex-row flex-col-reverse">
-            <div className="space-y-4 text-base md:text-lg text-gray-300 text-left leading-relaxed">
-              <p>Competitive pressure can push organizations to adopt AI tools quickly.</p>
-              <p>When business outcomes are not defined, AI becomes an experiment and soon changes into wasted effort, stalled adoption and unrealized promise.</p> 
-            </div>
-     {/* Warning Icon - centered with URGENT GLOW */}
-     <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex justify-center mb-12 md:-mt-[46px]"
-          >
-            <div className="relative">
-              {/* Outer pulsing ring */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.3, 1],
-                  opacity: [0.6, 0, 0.6],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute inset-0 rounded-full border-2 border-[var(--primary-green)]"
-                style={{
-                  filter: "blur(2px)",
-                }}
-              />
+              <div className="space-y-4 text-base md:text-lg text-left leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.85 }}>
+                <p>Competitive pressure can push organizations to adopt AI tools quickly.</p>
+                <p>When business outcomes are not defined, AI becomes an experiment and soon changes into wasted effort, stalled adoption and unrealized promise.</p>
+              </div>
 
-              {/* Icon with breathing animation */}
-              <motion.svg
-                animate={{
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="w-16 h-16 md:w-26 md:h-26 relative z-10"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
+              {/* Warning Icon - centered with URGENT GLOW */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex justify-center mb-12 md:-mt-[46px]"
               >
-                <motion.path
-                  d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-[var(--primary-green)]"
-                  animate={{
-                    opacity: [0.7, 1, 0.7],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-              </motion.svg>
+                <div className="relative">
+                  {/* Outer pulsing ring */}
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      opacity: [0.6, 0, 0.6],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="absolute inset-0 rounded-full border-2 border-[var(--primary-green)]"
+                    style={{
+                      filter: "blur(2px)",
+                    }}
+                  />
 
-              {/* Primary glow - pulsing */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.4, 0.7, 0.4],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(6,188,189,0.6), transparent 60%)",
-                  filter: "blur(25px)",
-                  zIndex: -1,
-                }}
-              />
+                  {/* Icon with breathing animation */}
+                  <motion.svg
+                    animate={{
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="w-16 h-16 md:w-26 md:h-26 relative z-10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <motion.path
+                      d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-[var(--primary-green)]"
+                      animate={{
+                        opacity: [0.7, 1, 0.7],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                  </motion.svg>
 
-              {/* Secondary glow - offset pulse for urgency */}
-              <motion.div
-                animate={{
-                  scale: [1.2, 1.5, 1.2],
-                  opacity: [0.2, 0.4, 0.2],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(6,188,189,0.5), transparent 70%)",
-                  filter: "blur(35px)",
-                  zIndex: -2,
-                }}
-              />
+                  {/* Primary glow - pulsing */}
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.4, 0.7, 0.4],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="absolute inset-0 rounded-full"
+                    style={{
+                      background: "radial-gradient(circle, rgba(6,188,189,0.6), transparent 60%)",
+                      filter: "blur(25px)",
+                      zIndex: -1,
+                    }}
+                  />
 
-              {/* Fast flash for urgency */}
-              <motion.div
-                animate={{
-                  opacity: [0, 0.8, 0],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  times: [0, 0.5, 1],
-                }}
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(6,188,189,0.8), transparent 50%)",
-                  filter: "blur(15px)",
-                  zIndex: -1,
-                }}
-              />
+                  {/* Secondary glow - offset pulse for urgency */}
+                  <motion.div
+                    animate={{
+                      scale: [1.2, 1.5, 1.2],
+                      opacity: [0.2, 0.4, 0.2],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5,
+                    }}
+                    className="absolute inset-0 rounded-full"
+                    style={{
+                      background: "radial-gradient(circle, rgba(6,188,189,0.5), transparent 70%)",
+                      filter: "blur(35px)",
+                      zIndex: -2,
+                    }}
+                  />
+
+                  {/* Fast flash for urgency */}
+                  <motion.div
+                    animate={{
+                      opacity: [0, 0.8, 0],
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      times: [0, 0.5, 1],
+                    }}
+                    className="absolute inset-0 rounded-full"
+                    style={{
+                      background: "radial-gradient(circle, rgba(6,188,189,0.8), transparent 50%)",
+                      filter: "blur(15px)",
+                      zIndex: -1,
+                    }}
+                  />
+                </div>
+              </motion.div>
             </div>
           </motion.div>
-            </div>
-          </motion.div>
-
-     
 
           {/* Cards Grid */}
           <motion.div
@@ -218,7 +215,7 @@ export default function PitfallsSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 "
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {pitfalls.map((pitfall, idx) => (
               <motion.div
@@ -238,8 +235,7 @@ export default function PitfallsSection() {
                     }}
                     className="absolute inset-0"
                     style={{
-                      background:
-                        "linear-gradient(to bottom, transparent, rgba(6,188,189,0.8) 30%, rgba(6,188,189,0.8) 70%, transparent)",
+                      background: "linear-gradient(to bottom, transparent, rgba(6,188,189,0.8) 30%, rgba(6,188,189,0.8) 70%, transparent)",
                     }}
                   />
                 </div>
@@ -257,18 +253,17 @@ export default function PitfallsSection() {
                     }}
                     className="absolute inset-0"
                     style={{
-                      background:
-                        "linear-gradient(to bottom, transparent, rgba(6,188,189,0.8) 30%, rgba(6,188,189,0.8) 70%, transparent)",
+                      background: "linear-gradient(to bottom, transparent, rgba(6,188,189,0.8) 30%, rgba(6,188,189,0.8) 70%, transparent)",
                     }}
                   />
                 </div>
 
                 {/* Card content */}
                 <div className="relative z-10 h-full flex flex-col p-6">
-                  <h3 className="text-xl font-bold text-white mb-4">
+                  <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
                     {pitfall.title}
                   </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.7 }}>
                     {pitfall.description}
                   </p>
                 </div>

@@ -6,41 +6,32 @@ export default function Hero() {
           
           {/* Left Side - Text Content */}
           <div className="space-y-6 lg:pr-8">
-            {/* Top Badge */}
-            {/* <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
-              <svg className="w-4 h-4 text-[var(--primary-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              <span className="text-[var(--primary-green)] text-xs font-semibold">Conversational AI Readiness</span>
-            </div> */}
-
             {/* Main Heading */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-[58px] font-bold leading-tight mb-4 mt-8 md:mt-0">
-                <span className="text-white">Is your Business ready for</span>
+              <h1 className="text-4xl md:text-5xl lg:text-[58px] font-bold leading-tight mb-4 pt-8 md:mt-0">
+                <span style={{ color: 'var(--text-primary)' }}>Is your Business ready for</span>
                 <br />
                 <span className="gradient-text">Conversational AI?</span>
               </h1>
-              <div className="space-y-2 text-lg md:text-xl text-gray-300 leading-relaxed text-left">
-    
-              <p>Search interfaces are fading.</p>
-              <p>Traditional media models are becoming obsolete. </p>
-              <p>eCommerce is giving way to conversational commerce.</p>
-              <p>AI-driven interactions are rising.</p>
-              <p>Those who adapt now will lead tomorrow’s markets.</p>
-            
+              <div className="space-y-2 text-lg md:text-xl leading-relaxed text-left" style={{ color: 'var(--text-primary)', opacity: 0.9 }}>
+                <p>Search interfaces are fading.</p>
+                <p>Traditional media models are becoming obsolete.</p>
+                <p>eCommerce is giving way to conversational commerce.</p>
+                <p>AI-driven interactions are rising.</p>
+                <p>Those who adapt now will lead tomorrow&apos;s markets.</p>
               </div>
             </div>
 
-            {/* CTA Buttons - Inline Tailwind Styles */}
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               {/* Primary Button - White Gradient */}
               <a 
                 href="#framework"
-                className="group inline-flex items-center justify-center space-x-2 px-6 py-3 text-black text-sm font-semibold rounded-[10px] backdrop-blur-[5px] border-0"
+                className="group inline-flex items-center justify-center space-x-2 px-6 py-3 text-black text-sm font-semibold rounded-[10px] backdrop-blur-[5px] border-0 transition-all duration-300"
                 style={{
-                  background: 'linear-gradient(172deg, rgb(207, 207, 207) 0%, rgb(255, 255, 255) 50.556%, rgb(207, 207, 207) 100%)',
-                  boxShadow: 'rgba(255, 255, 255, 0) 0px 0px 0px 0px',
+                  background: 'linear-gradient(180deg, rgb(240, 240, 240) 0%, rgb(220, 220, 220) 100%)',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                  filter: 'brightness(0.95)'
                 }}
               >
                 <span>Explore the Framework</span>
@@ -52,13 +43,15 @@ export default function Hero() {
               {/* Secondary Button - Dark with Subtle Border */}
               <a 
                 href="#contact"
-                className="inline-flex items-center justify-center space-x-2 px-6 py-3 text-white text-sm font-semibold rounded-[10px] backdrop-blur-[5px] border border-white/10 transition-all duration-300 hover:border-white/20"
+                className="inline-flex items-center justify-center space-x-2 px-6 py-3 text-sm font-semibold rounded-[10px] backdrop-blur-[5px] border transition-all duration-300 hover:border-white/20"
                 style={{
-                  background: 'linear-gradient(rgba(28, 28, 28, 0.1) 0%, rgba(18, 18, 18, 0.2) 100%)',
+                  color: 'var(--text-primary)',
+                  background: 'var(--card-bg)',
                   boxShadow: 'rgba(255, 255, 255, 0.9) 0px 0.602187px 0.602187px -1.58333px inset, rgba(255, 255, 255, 0.74) 0px 2.28853px 2.28853px -3.16667px inset, rgba(255, 255, 255, 0.05) 0px 10px 10px -4.75px inset',
+                  borderColor: 'var(--border-color)'
                 }}
               >
-                <span>Let’s Talk</span>
+                <span>Let&apos;s Talk</span>
               </a>
             </div>
           </div>
@@ -115,64 +108,70 @@ export default function Hero() {
               {/* Conversation Bubbles */}
               <div className="absolute top-[15%] left-[10%] animate-float-bubble">
                 <div className="bg-[var(--primary-green)]/10 border border-[var(--primary-green)]/30 rounded-2xl rounded-tr-sm px-4 py-2 backdrop-blur-sm">
-                  <p className="text-white text-xs font-medium">Context</p>
+                  <p className="text-xs font-medium" style={{ color: 'var(--text-primary)' }}>Context</p>
                 </div>
               </div>
 
               <div className="absolute top-[30%] right-[8%] animate-float-bubble delay-200">
                 <div className="bg-[var(--glow-green)]/10 border border-[var(--glow-green)]/30 rounded-2xl rounded-tl-sm px-4 py-2 backdrop-blur-sm">
-                  <p className="text-white text-xs">Prompts</p>
+                  <p className="text-xs" style={{ color: 'var(--text-primary)' }}>Prompts</p>
                 </div>
               </div>
 
               <div className="absolute bottom-[25%] left-[15%] animate-float-bubble delay-400">
                 <div className="bg-[var(--primary-green)]/10 border border-[var(--primary-green)]/30 rounded-2xl rounded-tr-sm px-4 py-2 backdrop-blur-sm">
-                  <p className="text-white text-xs font-medium">Conversations</p>
+                  <p className="text-xs font-medium" style={{ color: 'var(--text-primary)' }}>Conversations</p>
                 </div>
               </div>
 
-              {/* Particles */}
+              {/* Particles - Enhanced visibility for light mode */}
               <div className="absolute inset-0 flex items-center justify-center">
                 
                 {/* Inner Orbit 1 - 12 particles */}
                 {[...Array(12)].map((_, i) => (
                   <div key={`inner1-${i}`} className="absolute w-[200px] h-[200px] animate-orbit-fastest-anticlockwise" style={{ animationDelay: `-${(i / 12) * 16}s` }}>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-0.5 bg-[#0ee5e6] rounded-full shadow-sm shadow-[#0ee5e6]/60 animate-merge-pulse"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#0ee5e6] rounded-full animate-merge-pulse"
+                         style={{ boxShadow: '0 0 4px #0ee5e6, 0 0 8px #0ee5e6' }}></div>
                   </div>
                 ))}
 
                 {/* Inner Orbit 2 - 10 particles */}
                 {[...Array(10)].map((_, i) => (
                   <div key={`inner2-${i}`} className="absolute w-[260px] h-[260px] animate-orbit-fast-anticlockwise" style={{ animationDelay: `-${(i / 10) * 18}s` }}>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-0.5 bg-[#87f3f4] rounded-full shadow-sm shadow-[#87f3f4]/60 animate-merge-pulse"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#87f3f4] rounded-full animate-merge-pulse"
+                         style={{ boxShadow: '0 0 4px #87f3f4, 0 0 8px #87f3f4' }}></div>
                   </div>
                 ))}
 
                 {/* Middle Orbit 3 - 9 particles */}
                 {[...Array(9)].map((_, i) => (
                   <div key={`middle1-${i}`} className="absolute w-[320px] h-[320px] animate-orbit-medium-anticlockwise" style={{ animationDelay: `-${(i / 9) * 22}s` }}>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-0.5 bg-[var(--primary-green)] rounded-full shadow-sm shadow-[var(--primary-green)]/50"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-[var(--primary-green)] rounded-full"
+                         style={{ boxShadow: '0 0 3px var(--primary-green), 0 0 6px var(--primary-green)' }}></div>
                   </div>
                 ))}
 
                 {/* Middle Orbit 4 - 7 particles */}
                 {[...Array(7)].map((_, i) => (
                   <div key={`middle2-${i}`} className="absolute w-[380px] h-[380px] animate-orbit-medium-anticlockwise" style={{ animationDelay: `-${(i / 7) * 22}s` }}>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-0.5 bg-[var(--glow-green)] rounded-full shadow-sm shadow-[var(--glow-green)]/50"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-[var(--glow-green)] rounded-full"
+                         style={{ boxShadow: '0 0 3px var(--glow-green), 0 0 6px var(--glow-green)' }}></div>
                   </div>
                 ))}
 
                 {/* Outer Orbit 5 - 5 particles */}
                 {[...Array(5)].map((_, i) => (
                   <div key={`outer1-${i}`} className="absolute w-[420px] h-[420px] animate-orbit-slow-anticlockwise" style={{ animationDelay: `-${(i / 5) * 30}s` }}>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-0.5 bg-[#5ce8e9] rounded-full shadow-sm shadow-[#5ce8e9]/45"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#5ce8e9] rounded-full"
+                         style={{ boxShadow: '0 0 3px #5ce8e9, 0 0 6px #5ce8e9' }}></div>
                   </div>
                 ))}
 
                 {/* Far Outer Orbit 6 - 3 particles */}
                 {[...Array(3)].map((_, i) => (
                   <div key={`outer2-${i}`} className="absolute w-[460px] h-[460px] animate-orbit-slowest-anticlockwise" style={{ animationDelay: `-${(i / 3) * 40}s` }}>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-0.5 bg-[#b8f7f8] rounded-full shadow-sm shadow-[#b8f7f8]/35"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#b8f7f8] rounded-full"
+                         style={{ boxShadow: '0 0 3px #b8f7f8, 0 0 6px #b8f7f8' }}></div>
                   </div>
                 ))}
 
@@ -199,8 +198,13 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a080d] to-transparent pointer-events-none"></div>
+      {/* Bottom Gradient Fade - Adapts to theme */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none transition-opacity duration-300" 
+        style={{
+          background: `linear-gradient(to top, var(--background), transparent)`
+        }}
+      ></div>
     </section>
   );
 }
