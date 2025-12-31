@@ -48,7 +48,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="pt-12 pb-20 px-4 relative overflow-hidden bg-[var(--background)]">
+    <section id="contact" className="pt-12 pb-20 px-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-3xl mx-auto relative">
         {/* Background glow */}
         <div
@@ -82,7 +82,8 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-6 text-white"
+            className="text-4xl md:text-5xl font-bold text-center mb-6"
+            style={{ color: 'var(--text-primary)' }}
           >
             Let&apos;s Talk
           </motion.h2>
@@ -93,9 +94,10 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-center text-gray-400 text-sm md:text-base mb-12 max-w-2xl mx-auto"
+            className="text-center text-sm md:text-base mb-12 max-w-2xl mx-auto"
+            style={{ color: 'var(--text-primary)', opacity: 0.7 }}
           >
-           Thinking about Conversational Commerce and what comes next? Let&apos;s connect. I work with leaders who want clarity, direction and readiness beyond experimentation.
+            Thinking about Conversational Commerce and what comes next? Let&apos;s connect. I work with leaders who want clarity, direction and readiness beyond experimentation.
           </motion.p>
 
           {/* Form Card */}
@@ -105,12 +107,12 @@ export default function ContactSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="border border-[#222] bg-[rgba(10,9,10,0.72)] backdrop-blur-md rounded-2xl p-8 relative overflow-hidden"
+              className="contact-form-card rounded-2xl p-8 relative overflow-hidden"
             >
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-2">
                 {/* First Name */}
                 <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium text-white -mb-2">
+                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
                     First name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -119,14 +121,14 @@ export default function ContactSection() {
                     required
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/95 border border-gray-300 rounded-xl text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[var(--primary-green)] focus:bg-white focus:ring-4 focus:ring-[var(--primary-green)]/10 transition-all"
+                    className="contact-input"
                     placeholder="John"
                   />
                 </motion.div>
 
                 {/* Last Name */}
                 <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium text-white -mb-2">
+                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
                     Last name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -135,14 +137,14 @@ export default function ContactSection() {
                     required
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/95 border border-gray-300 rounded-xl text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[var(--primary-green)] focus:bg-white focus:ring-4 focus:ring-[var(--primary-green)]/10 transition-all"
+                    className="contact-input"
                     placeholder="Doe"
                   />
                 </motion.div>
 
                 {/* Company Name */}
                 <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium text-white -mb-2">
+                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
                     Company name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -151,14 +153,14 @@ export default function ContactSection() {
                     required
                     value={formData.companyName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/95 border border-gray-300 rounded-xl text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[var(--primary-green)] focus:bg-white focus:ring-4 focus:ring-[var(--primary-green)]/10 transition-all"
+                    className="contact-input"
                     placeholder="Your company"
                   />
                 </motion.div>
 
                 {/* Email */}
                 <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium text-white -mb-2">
+                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
                     Email <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -167,7 +169,7 @@ export default function ContactSection() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/95 border border-gray-300 rounded-xl text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[var(--primary-green)] focus:bg-white focus:ring-4 focus:ring-[var(--primary-green)]/10 transition-all"
+                    className="contact-input"
                     placeholder="name@business.com"
                   />
                   <p className="text-xs text-red-500 mt-1.5">Please provide your business email</p>
@@ -175,7 +177,7 @@ export default function ContactSection() {
 
                 {/* Mobile Phone - NOW OPTIONAL */}
                 <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium text-white -mb-2">
+                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
                     Mobile phone number <span className="text-gray-500 text-xs">(optional)</span>
                   </label>
                   <input
@@ -183,14 +185,14 @@ export default function ContactSection() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/95 border border-gray-300 rounded-xl text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[var(--primary-green)] focus:bg-white focus:ring-4 focus:ring-[var(--primary-green)]/10 transition-all"
+                    className="contact-input"
                     placeholder="+1 (555) 000-0000"
                   />
                 </motion.div>
 
                 {/* More Details */}
                 <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium text-white mb-2">
+                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
                     Additional Details
                   </label>
                   <textarea
@@ -198,7 +200,7 @@ export default function ContactSection() {
                     value={formData.details}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 bg-white/95 border border-gray-300 rounded-xl text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[var(--primary-green)] focus:bg-white focus:ring-4 focus:ring-[var(--primary-green)]/10 transition-all resize-none"
+                    className="contact-input resize-none"
                     placeholder="Tell me about your Conversational AI challenge..."
                   />
                 </motion.div>
@@ -207,7 +209,7 @@ export default function ContactSection() {
                 <motion.div variants={itemVariants}>
                   <button
                     type="submit"
-                    className="w-full px-5 py-4.5 cursor-pointer bg-gradient-to-br from-[var(--primary-green)] to-[#076b6d] text-white font-semibold text-sm rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(6,188,189,0.3)]"
+                    className="w-full px-5 py-4 cursor-pointer bg-gradient-to-br from-[var(--primary-green)] to-[#076b6d] text-white font-semibold text-sm rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(6,188,189,0.3)]"
                   >
                     Start the Conversation
                   </button>
@@ -220,7 +222,7 @@ export default function ContactSection() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="border border-[#222] bg-[rgba(10,9,10,0.72)] backdrop-blur-md rounded-2xl p-12 text-center"
+              className="contact-form-card rounded-2xl p-12 text-center"
             >
               <motion.div
                 initial={{ scale: 0 }}
@@ -241,8 +243,8 @@ export default function ContactSection() {
                 </svg>
               </motion.div>
 
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Thank You!</h3>
-              <p className="text-gray-400 text-sm md:text-base mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: 'var(--text-primary)' }}>Thank You!</h3>
+              <p className="text-sm md:text-base mb-6" style={{ color: 'var(--text-primary)', opacity: 0.7 }}>
                 Your message has been received. I&apos;ll get back to you within 24 hours.
               </p>
               <button

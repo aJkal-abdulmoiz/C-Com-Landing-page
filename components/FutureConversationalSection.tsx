@@ -23,8 +23,7 @@ const steps: Step[] = [
       </svg>
     ),
     label: "Search → Prompts",
-    description:
-      "From queries to natural language intent.",
+    description: "From queries to natural language intent.",
   },
   {
     icon: (
@@ -39,8 +38,7 @@ const steps: Step[] = [
       </svg>
     ),
     label: "Keywords → Contexts",
-    description:
-      "From isolated terms to shared conversational context.",
+    description: "From isolated terms to shared conversational context.",
   },
   {
     icon: (
@@ -57,8 +55,7 @@ const steps: Step[] = [
       </svg>
     ),
     label: "Pages → Conversations",
-    description:
-      "From static pages to AI-mediated dialogue.",
+    description: "From static pages to AI-mediated dialogue.",
   },
 ];
 
@@ -109,7 +106,8 @@ export default function FutureConversationalSection() {
   return (
     <section
       id="future-conversational"
-      className="pt-6 pb-20 px-4 relative overflow-hidden bg-[var(--background)]"
+      className="pt-6 pb-20 px-4 relative overflow-hidden"
+      style={{ backgroundColor: 'var(--background)' }}
     >
       <div className="max-w-[75rem] mx-auto relative z-10">
         {/* top pill */}
@@ -122,7 +120,7 @@ export default function FutureConversationalSection() {
         >
           <div className="inline-flex items-center px-6 py-2 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
             <span className="text-[var(--primary-green)] text-sm font-medium uppercase">
-            The Paradigm Shift
+              The Paradigm Shift
             </span>
           </div>
         </motion.div>
@@ -133,106 +131,115 @@ export default function FutureConversationalSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-10"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10"
+          style={{ color: 'var(--text-primary)' }}
         >
           The Future is Conversational
-
         </motion.h2>
+
         {/* copy (left) + animated voice visual (right) */}
         <div className="grid lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] gap-12 items-center mb-12">
-        {/* Left: cleaner paragraph layout */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="space-y-5"
-        >
-          <motion.p
-            variants={textVariants}
-            className="text-[15px] md:text-base text-gray-200 leading-[1.7]"
+          {/* Left: cleaner paragraph layout */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="space-y-5"
           >
-            eCommerce is undergoing a <span className="text-white font-medium">seismic shift</span> in the way people discover, compare and buy products.
-          </motion.p>
-          <motion.p
-            variants={textVariants}
-            className="text-[15px] md:text-base text-gray-200 leading-[1.7]"
-          >
-            Digital journey that started with a Google search, first moved to Social media and now entering the next era of{" "}
-            <span className="text-white font-medium">conversational interfaces</span> - the Large Language Models.
-          </motion.p>
-          <motion.p
-            variants={textVariants}
-            className="text-[15px] md:text-base text-gray-200 leading-[1.7]"
-          >
-            ChatGPT is evolving into a <span className="text-white font-medium">search engine, a product discovery platform and a checkout experience</span> - All inside one conversation.
-          </motion.p>
-          <motion.p
-            variants={textVariants}
-            className="text-[15px] md:text-base text-gray-200 leading-[1.7]"
-          >
-            For Brands and Businesses, this changes the rule to stay{" "}
-            <span className="text-white font-medium">visible, relevant and competitive</span>.
-          </motion.p>
-        </motion.div>
+            <motion.p
+              variants={textVariants}
+              className="text-[15px] md:text-base leading-[1.7]"
+              style={{ color: 'var(--text-primary)', opacity: 0.85 }}
+            >
+              eCommerce is undergoing a <span className="font-medium" style={{ color: 'var(--text-primary)', opacity: 1 }}>seismic shift</span> in the way people discover, compare and buy products.
+            </motion.p>
+            <motion.p
+              variants={textVariants}
+              className="text-[15px] md:text-base leading-[1.7]"
+              style={{ color: 'var(--text-primary)', opacity: 0.85 }}
+            >
+              Digital journey that started with a Google search, first moved to Social media and now entering the next era of{" "}
+              <span className="font-medium" style={{ color: 'var(--text-primary)', opacity: 1 }}>conversational interfaces</span> - the Large Language Models.
+            </motion.p>
+            <motion.p
+              variants={textVariants}
+              className="text-[15px] md:text-base leading-[1.7]"
+              style={{ color: 'var(--text-primary)', opacity: 0.85 }}
+            >
+              ChatGPT is evolving into a <span className="font-medium" style={{ color: 'var(--text-primary)', opacity: 1 }}>search engine, a product discovery platform and a checkout experience</span> - All inside one conversation.
+            </motion.p>
+            <motion.p
+              variants={textVariants}
+              className="text-[15px] md:text-base leading-[1.7]"
+              style={{ color: 'var(--text-primary)', opacity: 0.85 }}
+            >
+              For Brands and Businesses, this changes the rule to stay{" "}
+              <span className="font-medium" style={{ color: 'var(--text-primary)', opacity: 1 }}>visible, relevant and competitive</span>.
+            </motion.p>
+          </motion.div>
 
-        {/* Right: animated conversation box */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="hidden md:block"
-        >
-          <div className="relative rounded-3xl bg-[#050508] border border-[#222] overflow-hidden h-54 c-com-highlight-card">
-            {/* Voice wave animation */}
-            <div className="relative flex items-center gap-2 mb-6">
-              {[...Array(5)].map((_, i) => (
+          {/* Right: animated conversation box */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="hidden md:block"
+          >
+            <div className="relative rounded-3xl overflow-hidden h-54 c-com-highlight-card">
+              {/* Voice wave animation */}
+              <div className="relative flex items-center gap-2 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-1 bg-[var(--primary-green)] rounded-full animate-voice-wave"
+                    style={{
+                      height: `${20 + i * 8}px`,
+                      animationDelay: `${i * 0.15}s`,
+                    }}
+                  ></div>
+                ))}
+              </div>
+
+              {/* Conversation bubble */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="relative rounded-2xl px-4 py-3 max-w-[280px]"
+                style={{
+                  backgroundColor: 'var(--card-bg)',
+                  border: '1px solid var(--border-color)',
+                }}
+              >
+                <p className="text-xs leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.8 }}>
+                  &quot;How do I integrate Conversational AI into my product roadmap?&quot;
+                </p>
+              </motion.div>
+
+              {/* Small typing indicator */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+                className="mt-4 flex gap-1"
+              >
+                <div className="w-2 h-2 rounded-full bg-[var(--primary-green)]/60 animate-pulse"></div>
                 <div
-                  key={i}
-                  className="w-1 bg-[var(--primary-green)] rounded-full animate-voice-wave"
-                  style={{
-                    height: `${20 + i * 8}px`,
-                    animationDelay: `${i * 0.15}s`,
-                  }}
+                  className="w-2 h-2 rounded-full bg-[var(--primary-green)]/60 animate-pulse"
+                  style={{ animationDelay: "0.2s" }}
                 ></div>
-              ))}
+                <div
+                  className="w-2 h-2 rounded-full bg-[var(--primary-green)]/60 animate-pulse"
+                  style={{ animationDelay: "0.4s" }}
+                ></div>
+              </motion.div>
             </div>
-
-            {/* Conversation bubble */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="relative bg-white/5 border border-white/10 rounded-2xl px-4 py-3 max-w-[280px]"
-            >
-              <p className="text-xs text-gray-300 leading-relaxed">
-                &quot;How do I integrate Conversational AI into my product roadmap?&quot;
-              </p>
-            </motion.div>
-
-            {/* Small typing indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.9 }}
-              className="mt-4 flex gap-1"
-            >
-              <div className="w-2 h-2 rounded-full bg-[var(--primary-green)]/60 animate-pulse"></div>
-              <div
-                className="w-2 h-2 rounded-full bg-[var(--primary-green)]/60 animate-pulse"
-                style={{ animationDelay: "0.2s" }}
-              ></div>
-              <div
-                className="w-2 h-2 rounded-full bg-[var(--primary-green)]/60 animate-pulse"
-                style={{ animationDelay: "0.4s" }}
-              ></div>
-            </motion.div>
-          </div>
-        </motion.div>
-      </div>
+          </motion.div>
+        </div>
 
         {/* gradient step cards */}
         <motion.div
@@ -258,19 +265,16 @@ export default function FutureConversationalSection() {
                 >
                   {step.icon}
                 </motion.div>
-                <p className="text-base md:text-lg font-semibold text-white">
+                <p className="text-base md:text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
                   {step.label}
                 </p>
-                <p className="text-sm md:text-[15px] text-gray-300 leading-relaxed">
+                <p className="text-sm md:text-[15px] leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.8 }}>
                   {step.description}
                 </p>
               </div>
             </motion.div>
           ))}
         </motion.div>
-
-
-
       </div>
     </section>
   );

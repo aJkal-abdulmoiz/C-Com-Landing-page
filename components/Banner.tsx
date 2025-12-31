@@ -12,14 +12,15 @@ export default function Banner() {
       }}
     >
       <div className="text-center">
-        <p className="text-white text-sm md:text-base font-medium flex items-center justify-center flex-wrap gap-1">
-        <span className="md:block hidden">The Future is Conversational. Are you ready to lead?</span>
+        <p className="text-sm md:text-base font-medium flex items-center justify-center flex-wrap gap-1" style={{ color: 'var(--banner-text)' }}>
+          <span className="md:block hidden">The Future is Conversational. Are you ready to lead?</span>
 
           <span className="inline-flex items-center whitespace-nowrap">
             🚀
             <Link 
-              href="#banner" 
-              className="underline hover:text-gray-200 transition-colors font-semibold ml-1"
+              href="#contact" 
+              className="underline font-semibold ml-1"
+              style={{ color: 'var(--banner-text)' }}
             >
               Start Building Readiness
             </Link>

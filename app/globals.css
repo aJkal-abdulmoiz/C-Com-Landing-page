@@ -8,15 +8,35 @@
   --font-manrope: "Manrope", sans-serif;
 }
 
+/* Dark Mode Variables (add this new section) */
+:root.light {
+  --background: #ffffff;
+  --text-primary: #1f2937;
+  --banner-text: #0f172a; /* Darker for banner in light mode */
+  --card-bg: rgba(249, 250, 251, 0.72);
+  --border-color: #e5e7eb;
+  --navbar-bg: rgba(255, 255, 255, 0.8);
+}
+
+:root.dark {
+  --background: #080a0d;
+  --text-primary: #e5e7eb;
+  --banner-text: #ffffff; /* White for dark mode */
+  --card-bg: rgba(10, 9, 10, 0.72);
+  --border-color: #222;
+  --navbar-bg: rgba(0, 0, 0, 0.2);
+}
+
 body {
   font-family: var(--font-manrope);
   background-color: var(--background);
-  color: rgb(255, 255, 255);
+  color: var(--text-primary);
   overflow-x: hidden;
   font-size: 60px;
   font-weight: 500;
   line-height: 1em;
   text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -119,14 +139,7 @@ html {
 
 /* C-Com Solution Card - Compact version (500px max width) */
 .c-com-solution-card-compact {
-  --border-bottom-width: 1px;
-  --border-color: #222;
-  --border-left-width: 1px;
-  --border-right-width: 1px;
-  --border-style: solid;
-  --border-top-width: 1px;
   border-radius: 16px;
-  border: var(--border-top-width) var(--border-style) var(--border-color);
   width: 100%;
   max-width: 500px;
   min-height: 400px;
@@ -135,9 +148,19 @@ html {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background-color: rgba(10, 9, 10, 0.72);
   transition: all 0.3s ease;
 }
+
+:root.dark .c-com-solution-card-compact {
+  border: 1px solid #222;
+  background-color: rgba(10, 9, 10, 0.72);
+}
+
+:root.light .c-com-solution-card-compact {
+  border: 1px solid rgba(6, 188, 189, 0.2);
+  background-color: rgba(249, 250, 251, 0.72);
+}
+
 .c-com-solution-card-compact::before {
   content: "";
   position: absolute;
@@ -146,9 +169,16 @@ html {
   transform: translateX(-50%);
   width: 85%;
   height: 2px;
-  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
   opacity: 0.8;
   pointer-events: none;
+}
+
+:root.dark .c-com-solution-card-compact::before {
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+}
+
+:root.light .c-com-solution-card-compact::before {
+  background: radial-gradient(circle, rgba(6,188,189,0.6) 0%, rgba(6,188,189,0) 70%);
 }
 
 
@@ -159,27 +189,39 @@ html {
   }
 }
 
+.service-card-pattern {
+  background-image: url('/bg-pattern.webp');
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: 160px 160px;
+}
+
+:root.dark .service-card-pattern {
+  opacity: 0.6;
+}
+
+:root.light .service-card-pattern {
+  opacity: 0.3;
+}
+
+:root.dark .service-card-fade {
+  background: linear-gradient(to bottom, transparent, rgba(11,15,13,1));
+}
+
+:root.light .service-card-fade {
+  background: linear-gradient(to bottom, transparent, rgba(249, 250, 251, 0.95));
+}
+
+
+
 /* C-Com Solution Button */
 .c-com-solution-button {
-  --border-bottom-width: 1px;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-left-width: 1px;
-  --border-right-width: 1px;
-  --border-style: solid;
-  --border-top-width: 1px;
   backdrop-filter: blur(5px);
-  background: linear-gradient(rgba(28, 28, 28, 0.1) 0%, rgba(18, 18, 18, 0.2) 100%);
   width: 100%;
   border-radius: 10px;
-  border: var(--border-top-width) var(--border-style) var(--border-color);
-  box-shadow: 
-    rgba(255, 255, 255, 0.9) 0px 0.602187px 0.602187px -1.58333px inset,
-    rgba(255, 255, 255, 0.74) 0px 2.28853px 2.28853px -3.16667px inset,
-    rgba(255, 255, 255, 0.05) 0px 10px 10px -4.75px inset;
   opacity: 1;
   will-change: auto;
-  padding: 0 8px;
-  color: white;
+  padding: 0px 8px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -189,23 +231,37 @@ html {
   display: block;
 }
 
-.c-com-solution-button:hover {
+:root.dark .c-com-solution-button {
+  background: linear-gradient(rgba(28, 28, 28, 0.1) 0%, rgba(18, 18, 18, 0.2) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    rgba(255, 255, 255, 0.9) 0px 0.602187px 0.602187px -1.58333px inset,
+    rgba(255, 255, 255, 0.74) 0px 2.28853px 2.28853px -3.16667px inset,
+    rgba(255, 255, 255, 0.05) 0px 10px 10px -4.75px inset;
+  color: white;
+}
+
+:root.light .c-com-solution-button {
+  background: #f2f2f2;
+  border: 1px solid rgba(6, 188, 189, 0.3);
+  box-shadow: 
+    rgba(6, 188, 189, 0.3) 0px 0.602187px 0.602187px -1.58333px inset,
+    rgba(6, 188, 189, 0.2) 0px 2.28853px 2.28853px -3.16667px inset;
+  color: var(--text-primary);
+}
+
+:root.dark .c-com-solution-button:hover {
   border-color: rgba(255, 255, 255, 0.2);
   background: linear-gradient(rgba(38, 38, 38, 0.2) 0%, rgba(28, 28, 28, 0.3) 100%);
 }
 
+:root.light .c-com-solution-button:hover {
+  border-color: rgba(6, 188, 189, 0.5);
+  background: linear-gradient(rgba(6, 188, 189, 0.15) 0%, rgba(6, 188, 189, 0.25) 100%);
+}
+
 .c-com-paradigm-card {
-  --border-color: #222;
   border-radius: 8px;
-  border: 1px solid var(--border-color);
-  /* teal gradient from bottom */
-  background: 
-    radial-gradient(
-      50% 50% at 50% 100%,
-      rgba(6, 188, 189, 0.35),
-      transparent 100%
-    ),
-    #020203;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -218,11 +274,9 @@ html {
   will-change: transform;
   transition: all 0.3s ease;
 }
-.c-com-highlight-card {
-  --border-color: #222;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  /* very dark base with teal gradient from bottom */
+
+:root.dark .c-com-paradigm-card {
+  border: 1px solid #222;
   background: 
     radial-gradient(
       50% 50% at 50% 100%,
@@ -230,6 +284,22 @@ html {
       transparent 100%
     ),
     #020203;
+}
+
+:root.light .c-com-paradigm-card {
+  border: 1px solid rgba(6, 188, 189, 0.2);
+  background: 
+    radial-gradient(
+      50% 50% at 50% 100%,
+      rgba(6, 188, 189, 0.15),
+      transparent 100%
+    ),
+    #f9fafb;
+}
+
+/* Highlight Card - Light/Dark Mode */
+.c-com-highlight-card {
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -241,6 +311,28 @@ html {
   overflow: hidden;
   will-change: transform;
   transition: all 0.3s ease;
+}
+
+:root.dark .c-com-highlight-card {
+  border: 1px solid #222;
+  background: 
+    radial-gradient(
+      50% 50% at 50% 100%,
+      rgba(6, 188, 189, 0.35),
+      transparent 100%
+    ),
+    #020203;
+}
+
+:root.light .c-com-highlight-card {
+  border: 1px solid rgba(6, 188, 189, 0.2);
+  background: 
+    radial-gradient(
+      50% 50% at 50% 100%,
+      rgba(6, 188, 189, 0.15),
+      transparent 100%
+    ),
+    #f9fafb;
 }
 
 
@@ -286,42 +378,103 @@ html {
 }
 
 .pitfall-card {
-  border: 1px solid #222;
   border-radius: 12px;
-  background-color: rgba(10, 9, 10, 0.5);
   backdrop-filter: blur(10px);
   min-height: 200px;
-  transition: all 0.8s eas;
-  overflow: visible; /* Allow glow to extend beyond */
+  transition: all 0.8s ease;
+  overflow: visible;
+}
+
+:root.dark .pitfall-card {
+  border: 1px solid #222;
+  background-color: rgba(10, 9, 10, 0.5);
+}
+
+:root.light .pitfall-card {
+  border: 1px solid rgba(6, 188, 189, 0.2);
+  background-color: rgba(249, 250, 251, 0.5);
 }
 
 .ideas-essay-card {
-  background: linear-gradient(145deg, rgba(10, 9, 10, 0.6), rgba(10, 9, 10, 0.4));
-  border: 1px solid #1a1a1a;
   border-radius: 12px;
   transition: all 0.4s ease;
   overflow: hidden;
   backdrop-filter: blur(10px);
 }
 
+:root.dark .ideas-essay-card {
+  background: linear-gradient(145deg, rgba(10, 9, 10, 0.6), rgba(10, 9, 10, 0.4));
+  border: 1.5px solid #1a1a1a;
+}
+
+:root.light .ideas-essay-card {
+  background: linear-gradient(145deg, rgba(249, 250, 251, 0.8), rgba(249, 250, 251, 0.6));
+  border: 1.5px solid rgba(6, 188, 189, 0.2);
+}
+
+.ideas-essay-card:hover {
+  transform: translateY(-4px);
+}
+
+:root.dark .ideas-essay-card:hover {
+  border-color: rgba(6, 188, 189, 0.4);
+  box-shadow: 0 8px 24px rgba(6, 188, 189, 0.15);
+}
+
+:root.light .ideas-essay-card:hover {
+  border-color: rgba(6, 188, 189, 0.5);
+  box-shadow: 0 8px 24px rgba(6, 188, 189, 0.2);
+}
+
+/* Essay Card Header */
+.essay-card-header {
+  background: linear-gradient(to bottom right, var(--primary-green)/10, transparent);
+}
+
+.essay-card-border {
+  border-bottom: 1px solid;
+}
+
+:root.dark .essay-card-border {
+  border-bottom-color: rgba(128, 128, 128, 0.5);
+}
+
+:root.light .essay-card-border {
+  border-bottom-color: rgba(6, 188, 189, 0.15);
+}
+
 .about-highlight-card-dark {
-  background: 
-  radial-gradient(
-    50% 50% at 50% 100%,
-    rgba(6, 188, 189, 0.35),
-    transparent 100%
-  ),
-  #020203;
-  border: 1px solid #1a1a1a;
   border-radius: 12px;
   padding: 1.5rem;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 
+/* Dark mode */
+:root.dark .about-highlight-card-dark {
+  background: 
+    radial-gradient(
+      50% 50% at 50% 100%,
+      rgba(6, 188, 189, 0.35),
+      transparent 100%
+    ),
+    #020203;
+  border: 1px solid #1a1a1a;
+}
+
+/* Light mode */
+:root.light .about-highlight-card-dark {
+  background: 
+    radial-gradient(
+      50% 50% at 50% 100%,
+      rgba(6, 188, 189, 0.15),
+      transparent 100%
+    ),
+    #f9fafb;
+  border: 1px solid rgba(6, 188, 189, 0.2);
+}
+
 .testimonial-card {
-  border: 1px solid #222;
-  background-color: rgba(10, 9, 10, 0.72);
   border-radius: 16px;
   padding: 20px;
   display: flex;
@@ -330,6 +483,100 @@ html {
   overflow: hidden;
   backdrop-filter: blur(10px);
   min-height: 200px;
+  transition: all 0.3s ease;
+}
+
+:root.dark .testimonial-card {
+  border: 1px solid #222;
+  background-color: rgba(10, 9, 10, 0.72);
+}
+
+:root.light .testimonial-card {
+  border: 1px solid rgba(6, 188, 189, 0.2);
+  background-color: rgba(249, 250, 251, 0.72);
+}
+
+/* Testimonial Pattern */
+.testimonial-pattern {
+  background-image: url('/bg-pattern.webp');
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: 140px 140px;
+}
+
+:root.dark .testimonial-pattern {
+  opacity: 0.6;
+}
+
+:root.light .testimonial-pattern {
+  opacity: 0.3;
+}
+
+/* Testimonial Fade */
+:root.dark .testimonial-fade {
+  background: linear-gradient(to bottom, transparent, rgba(10, 9, 10, 0.72));
+}
+
+:root.light .testimonial-fade {
+  background: linear-gradient(to bottom, transparent, rgba(249, 250, 251, 0.72));
+}
+
+.contact-form-card {
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+:root.dark .contact-form-card {
+  border: 1px solid #222;
+  background-color: rgba(10, 9, 10, 0.72);
+}
+
+:root.light .contact-form-card {
+  border: 1px solid rgba(6, 188, 189, 0.2);
+  background-color: rgba(249, 250, 251, 0.72);
+}
+
+/* Contact Input Fields - Light/Dark Mode */
+.contact-input {
+  width: 100%;
+  padding: 0px 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+:root.dark .contact-input {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #d1d5db;
+  color: #111827;
+}
+
+:root.dark .contact-input::placeholder {
+  color: #9ca3af;
+}
+
+:root.dark .contact-input:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(6, 188, 189, 0.1);
+}
+
+:root.light .contact-input {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  color: #111827;
+}
+
+:root.light .contact-input::placeholder {
+  color: #9ca3af;
+}
+
+:root.light .contact-input:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(6, 188, 189, 0.1);
 }
 
 .metric-card-wrapper {
@@ -353,6 +600,17 @@ html {
   z-index: 10;
 }
 
+.footer-border-top {
+  border-top: 1px solid;
+}
+
+:root.dark .footer-border-top {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+:root.light .footer-border-top {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
 
 
 @keyframes voice-wave {

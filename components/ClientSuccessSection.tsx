@@ -16,7 +16,6 @@ export default function ClientSuccessSection() {
     },
   ];
 
-
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -44,14 +43,13 @@ export default function ClientSuccessSection() {
   };
 
   return (
-    <section id="success-stories" className="md:py-18 py-12 px-4 relative overflow-hidden bg-[var(--background)]">
+    <section id="success-stories" className="md:py-18 py-12 px-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-[75rem] mx-auto relative">
         {/* Background glow */}
         <div
           className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full"
           style={{
-            background:
-              "radial-gradient(circle, rgba(6,188,189,0.1), transparent 70%)",
+            background: "radial-gradient(circle, rgba(6,188,189,0.1), transparent 70%)",
             filter: "blur(100px)",
             opacity: 0.5,
           }}
@@ -69,7 +67,7 @@ export default function ClientSuccessSection() {
           >
             <div className="inline-flex items-center px-6 py-2 rounded-full border border-[var(--primary-green)]/30 bg-[var(--primary-green)]/5">
               <span className="text-[var(--primary-green)] text-sm font-medium uppercase">
-              Testimonials
+                Testimonials
               </span>
             </div>
           </motion.div>
@@ -80,7 +78,8 @@ export default function ClientSuccessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-4 text-white"
+            className="text-4xl md:text-5xl font-bold text-center mb-4"
+            style={{ color: 'var(--text-primary)' }}
           >
             Testimonials
           </motion.h2>
@@ -91,7 +90,8 @@ export default function ClientSuccessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="text-center text-gray-400 text-sm md:text-base mb-12 max-w-3xl mx-auto"
+            className="text-center text-sm md:text-base mb-12 max-w-3xl mx-auto"
+            style={{ color: 'var(--text-primary)', opacity: 0.7 }}
           >
             Leaders I have worked with achieve measurable results.
           </motion.p>
@@ -108,18 +108,9 @@ export default function ClientSuccessSection() {
               <motion.div key={idx} variants={cardVariants} className="testimonial-card">
                 {/* Top background pattern with fade */}
                 <div className="absolute top-0 left-0 right-0 h-32 overflow-hidden rounded-t-2xl">
-                  <div
-                    className="absolute inset-0 opacity-60"
-                    style={{
-                      backgroundImage:
-                        "url('/bg-pattern.webp')",
-                      backgroundRepeat: "repeat",
-                      backgroundPosition: "left top",
-                      backgroundSize: "140px 140px",
-                    }}
-                  />
+                  <div className="absolute inset-0 testimonial-pattern" />
                   {/* Fade gradient from bottom */}
-                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-[rgba(10,9,10,0.72)]" />
+                  <div className="absolute inset-x-0 bottom-0 h-16 testimonial-fade" />
                 </div>
 
                 {/* Content */}
@@ -133,18 +124,17 @@ export default function ClientSuccessSection() {
                     <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
                   </svg>
 
-                  <p className="text-sm md:text-base text-gray-200 italic leading-relaxed mb-4">
+                  <p className="text-sm md:text-base italic leading-relaxed mb-4" style={{ color: 'var(--text-primary)', opacity: 0.9 }}>
                     &quot;{testimonial.quote}&quot;
                   </p>
 
-                  <p className="text-xs md:text-sm text-white font-semibold">
+                  <p className="text-xs md:text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
                     — {testimonial.author}
                   </p>
                 </div>
               </motion.div>
             ))}
           </motion.div>
-
         </div>
       </div>
     </section>

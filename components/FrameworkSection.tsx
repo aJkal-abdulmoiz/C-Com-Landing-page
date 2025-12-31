@@ -99,6 +99,7 @@ export default function FrameworkSection() {
     },
   };
 
+  // Horizontal line variants (Desktop)
   const lineVariants: Variants = {
     hidden: { scaleX: 0 },
     visible: {
@@ -117,6 +118,37 @@ export default function FrameworkSection() {
     },
     visible: {
       scaleX: 1,
+      opacity: [0, 1, 1, 0.6],
+      transition: {
+        duration: 1.8,
+        ease: [0.25, 0.1, 0.25, 1],
+        opacity: {
+          duration: 1.8,
+          times: [0, 0.2, 0.7, 1],
+        }
+      },
+    },
+  };
+
+  // Vertical line variants (Mobile)
+  const verticalLineVariants: Variants = {
+    hidden: { scaleY: 0 },
+    visible: {
+      scaleY: 1,
+      transition: {
+        duration: 1.8,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const verticalGlowVariants: Variants = {
+    hidden: { 
+      scaleY: 0,
+      opacity: 0,
+    },
+    visible: {
+      scaleY: 1,
       opacity: [0, 1, 1, 0.6],
       transition: {
         duration: 1.8,
@@ -154,14 +186,13 @@ export default function FrameworkSection() {
   };
 
   return (
-    <section id="framework" className="py-20 px-4 relative overflow-hidden bg-[var(--background)]">
+    <section id="framework" className="py-20 px-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-[75rem] mx-auto relative">
         {/* Background glow effects */}
         <div
           className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
           style={{
-            background:
-              "radial-gradient(circle, rgba(6,188,189,0.15), transparent 70%)",
+            background: "radial-gradient(circle, rgba(6,188,189,0.15), transparent 70%)",
             filter: "blur(80px)",
             opacity: 0.6,
           }}
@@ -190,7 +221,8 @@ export default function FrameworkSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-4 text-white"
+            className="text-4xl md:text-5xl font-bold text-center mb-4"
+            style={{ color: 'var(--text-primary)' }}
           >
             Conversational AI Readiness Framework
           </motion.h2>
@@ -201,20 +233,25 @@ export default function FrameworkSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-center text-gray-400 text-base md:text-lg mb-16 max-w-3xl mx-auto"
+            className="text-center text-base md:text-lg mb-16 max-w-3xl mx-auto"
+            style={{ color: 'var(--text-primary)', opacity: 0.7 }}
           >
             Conversational Commerce opportunity isn&apos;t adopting AI faster, it is adopting it with intention. This framework helps assess current state and embark with a purpose.
           </motion.p>
 
           {/* Timeline Container */}
           <div className="relative max-w-5xl mx-auto mb-24">
-            {/* Horizontal Line - Base (dark) */}
+            {/* DESKTOP: Horizontal Lines */}
+            {/* Horizontal Line - Base (adapts to theme) */}
             <motion.div
               variants={lineVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="absolute top-[60px] left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#222] to-transparent origin-left"
+              className="hidden md:block absolute top-[60px] left-0 right-0 h-[2px] origin-left"
+              style={{
+                background: 'linear-gradient(to right, transparent, var(--border-color), transparent)',
+              }}
             />
 
             {/* Horizontal Line - Glow Layer (teal) */}
@@ -223,22 +260,35 @@ export default function FrameworkSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="absolute top-[60px] left-0 right-0 h-[3px] origin-left"
+              className="hidden md:block absolute top-[60px] left-0 right-0 h-[3px] origin-left"
               style={{
                 background: "linear-gradient(to right, transparent, rgba(6,188,189,0.8) 20%, rgba(6,188,189,0.8) 80%, transparent)",
                 filter: "blur(4px)",
               }}
             />
 
-            {/* Additional sharp glow line */}
+            {/* Vertical Line - Glow Layer */}
             <motion.div
-              variants={glowVariants}
+              variants={verticalGlowVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="absolute top-[59px] left-0 right-0 h-[1px] origin-left"
+              viewport={{ once: true, amount: 0.2 }}
+              className="md:hidden absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[3px] origin-top"
               style={{
-                background: "linear-gradient(to right, transparent, rgba(6,188,189,1) 30%, rgba(6,188,189,1) 70%, transparent)",
+                background: "linear-gradient(to bottom, transparent, rgba(6,188,189,0.8) 15%, rgba(6,188,189,0.8) 85%, transparent)",
+                filter: "blur(6px)",
+              }}
+            />
+
+            {/* Vertical Line - Sharp glow */}
+            <motion.div
+              variants={verticalGlowVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="md:hidden absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] origin-top"
+              style={{
+                background: "linear-gradient(to bottom, transparent, rgba(6,188,189,1) 20%, rgba(6,188,189,1) 80%, transparent)",
               }}
             />
 
@@ -256,17 +306,20 @@ export default function FrameworkSection() {
                   variants={itemVariants}
                   className="flex flex-col items-center text-center"
                 >
-                  {/* Vertical connector line */}
+                  {/* Vertical connector line - DESKTOP ONLY */}
                   <motion.div
                     initial={{ scaleY: 0 }}
                     whileInView={{ scaleY: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, delay: 0.4 + idx * 0.3 }}
-                    className="w-[2px] h-8 bg-gradient-to-b from-[#222] to-transparent origin-top"
+                    className="hidden md:block w-[2px] h-8 origin-top"
+                    style={{
+                      background: 'linear-gradient(to bottom, var(--border-color), transparent)',
+                    }}
                   />
 
                   {/* Number Circle */}
-                  <div className="relative mb-6 group cursor-pointer">
+                  <div className="relative mb-6 group cursor-pointer z-10">
                     <motion.div
                       whileHover={{ scale: 1.15 }}
                       transition={{ duration: 0.3 }}
@@ -280,8 +333,7 @@ export default function FrameworkSection() {
                     <div
                       className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       style={{
-                        background:
-                          "radial-gradient(circle, rgba(6,188,189,0.5), transparent 70%)",
+                        background: "radial-gradient(circle, rgba(6,188,189,0.5), transparent 70%)",
                         filter: "blur(20px)",
                         zIndex: -1,
                       }}
@@ -290,10 +342,10 @@ export default function FrameworkSection() {
 
                   {/* Content */}
                   <div className="space-y-3">
-                    <h3 className="text-lg md:text-xl font-bold text-white">
+                    <h3 className="text-lg md:text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
                       {step.title}
                     </h3>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.7 }}>
                       {step.description}
                     </p>
                   </div>
@@ -320,7 +372,8 @@ export default function FrameworkSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl font-bold text-center text-white mb-8"
+              className="text-3xl md:text-4xl font-bold text-center mb-8"
+              style={{ color: 'var(--text-primary)' }}
             >
               Areas of focus across the Value Chain
             </motion.h3>
@@ -351,11 +404,11 @@ export default function FrameworkSection() {
                     {block.icon}
                   </motion.div>
 
-                  <h4 className="text-lg md:text-xl font-bold text-white mb-3">
+                  <h4 className="text-lg md:text-xl font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
                     {block.title}
                   </h4>
 
-                  <p className="text-[13px] md:text-sm text-gray-300 leading-relaxed">
+                  <p className="text-[13px] md:text-sm leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.8 }}>
                     {block.description}
                   </p>
                 </motion.div>
