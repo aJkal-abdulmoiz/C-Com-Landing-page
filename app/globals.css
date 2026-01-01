@@ -185,7 +185,7 @@ html {
 @media (max-width: 640px) {
   .c-com-solution-card-compact {
     max-width: 100%;
-    min-height: auto;
+    min-height: 450px;
   }
 }
 
@@ -540,6 +540,7 @@ html {
 .contact-input {
   width: 100%;
   padding: 0px 1rem;
+  height: 44px;
   border-radius: 0.75rem;
   font-size: 0.875rem;
   transition: all 0.2s ease;

@@ -109,9 +109,9 @@ export default function ContactSection() {
               viewport={{ once: true, amount: 0.2 }}
               className="contact-form-card rounded-2xl p-8 relative overflow-hidden"
             >
-              <form onSubmit={handleSubmit} className="space-y-2">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 {/* First Name */}
-                <motion.div variants={itemVariants}>
+                <motion.div variants={itemVariants} className="flex flex-col gap-2 pb-2">
                   <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
                     First name <span className="text-red-500">*</span>
                   </label>
@@ -127,8 +127,8 @@ export default function ContactSection() {
                 </motion.div>
 
                 {/* Last Name */}
-                <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
+                <motion.div variants={itemVariants} className="flex flex-col gap-2 pb-2">
+                  <label className="block text-sm font-medium mb-4" style={{ color: 'var(--text-primary)' }}>
                     Last name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -143,8 +143,8 @@ export default function ContactSection() {
                 </motion.div>
 
                 {/* Company Name */}
-                <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
+                <motion.div variants={itemVariants} className="flex flex-col gap-2 pb-2">
+                  <label className="block text-sm font-medium mb-4" style={{ color: 'var(--text-primary)' }}>
                     Company name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -159,8 +159,8 @@ export default function ContactSection() {
                 </motion.div>
 
                 {/* Email */}
-                <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
+                <motion.div variants={itemVariants} className="flex flex-col gap-2 pb-2">
+                  <label className="block text-sm font-medium mb-4" style={{ color: 'var(--text-primary)' }}>
                     Email <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -176,8 +176,8 @@ export default function ContactSection() {
                 </motion.div>
 
                 {/* Mobile Phone - NOW OPTIONAL */}
-                <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
+                <motion.div variants={itemVariants} className="flex flex-col gap-2 pb-2">
+                  <label className="block text-sm font-medium mb-4" style={{ color: 'var(--text-primary)' }}>
                     Mobile phone number <span className="text-gray-500 text-xs">(optional)</span>
                   </label>
                   <input
@@ -191,8 +191,8 @@ export default function ContactSection() {
                 </motion.div>
 
                 {/* More Details */}
-                <motion.div variants={itemVariants}>
-                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
+                <motion.div variants={itemVariants} className="flex flex-col gap-2 pb-2">
+                  <label className="block text-sm font-medium mb-4" style={{ color: 'var(--text-primary)' }}>
                     Additional Details
                   </label>
                   <textarea
@@ -200,13 +200,13 @@ export default function ContactSection() {
                     value={formData.details}
                     onChange={handleChange}
                     rows={4}
-                    className="contact-input resize-none"
+                    className="contact-input resize-none !h-[200px]"
                     placeholder="Tell me about your Conversational AI challenge..."
                   />
                 </motion.div>
 
                 {/* Submit Button */}
-                <motion.div variants={itemVariants}>
+                <motion.div variants={itemVariants} className="flex flex-col gap-2 pb-2">
                   <button
                     type="submit"
                     className="w-full px-5 py-4 cursor-pointer bg-gradient-to-br from-[var(--primary-green)] to-[#076b6d] text-white font-semibold text-sm rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(6,188,189,0.3)]"
