@@ -43,7 +43,7 @@ export default function ClientSuccessSection() {
   };
 
   return (
-    <section id="success-stories" className="md:py-18 py-12 px-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
+    <section id="success-stories" className="md:py-22 py-12 px-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-[75rem] mx-auto relative">
         {/* Background glow */}
         <div

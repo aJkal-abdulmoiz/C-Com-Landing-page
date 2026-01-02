@@ -59,7 +59,7 @@ export default function Navbar() {
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const sections = ["about", "future-conversational", "framework", "pitfalls", "success-stories", "contact"];
+    const sections = ["about", "future-conversational", "framework", "ideas-essays", "pitfalls", "success-stories", "contact"];
     
     sections.forEach((sectionId) => {
       const element = document.getElementById(sectionId);
@@ -168,7 +168,7 @@ export default function Navbar() {
             >
               <div className="bg-transparent relative w-32 h-32 md:w-42 md:h-42 transition-all duration-300">
                 <Image
-                  src="/logo-og.png"
+                  src="/logo.png"
                   alt="Company logo"
                   fill
                   className="object-contain"
@@ -195,7 +195,13 @@ export default function Navbar() {
                       <motion.div
                         layoutId="activeSection"
                         className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[var(--primary-green)]"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        transition={{ 
+                          type: "spring", 
+                          stiffness: 380, 
+                          damping: 30,
+                          duration: 0.3 
+                        }}
+                        style={{ originY: 0 }}  // ✅ Add this
                       />
                     )}
                   </Link>
