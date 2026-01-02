@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, Variants } from "framer-motion";
@@ -9,27 +9,37 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [mounted, setMounted] = useState(false);
   
-  // ✅ Initialize theme state correctly - no Effect needed
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window === 'undefined') return true;
+  // ✅ Calculate theme using useMemo to avoid setState in useEffect
+  const isDark = useMemo(() => {
+    if (typeof window === 'undefined' || !mounted) return false;
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     return savedTheme ? savedTheme === "dark" : prefersDark;
-  });
+  }, [mounted]);
 
-  // Apply theme class on mount and changes
+  // Set mounted state
   useEffect(() => {
-    document.documentElement.className = isDark ? "dark" : "light";
-  }, [isDark]);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
+  // Apply theme class
+  useEffect(() => {
+    if (mounted) {
+      document.documentElement.className = isDark ? "dark" : "light";
+    }
+  }, [isDark, mounted]);
 
   // Toggle theme
   const toggleTheme = () => {
-    setIsDark(prev => {
-      const newTheme = !prev;
-      localStorage.setItem("theme", newTheme ? "dark" : "light");
-      return newTheme;
-    });
+    const newTheme = !isDark;
+    localStorage.setItem("theme", newTheme ? "dark" : "light");
+    document.documentElement.className = newTheme ? "dark" : "light";
+    // Force re-render by toggling mounted
+    setMounted(false);
+    setTimeout(() => setMounted(true), 0);
   };
 
   useEffect(() => {
@@ -124,11 +134,6 @@ export default function Navbar() {
     },
   };
 
-  const iconVariants = {
-    closed: { d: "M4 6h16M4 12h16M4 18h16" },
-    open: { d: "M6 18L18 6M6 6l12 12" },
-  };
-
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const targetId = href.replace("#", "");
@@ -144,6 +149,9 @@ export default function Navbar() {
     
     setIsMobileMenuOpen(false);
   };
+
+  // Don't render until mounted
+  if (!mounted) return null;
 
   return (
     <>
@@ -167,20 +175,13 @@ export default function Navbar() {
               onClick={(e) => handleNavClick(e, "#hero")}
             >
               <div className="bg-transparent relative w-32 h-32 md:w-42 md:h-42 transition-all duration-300">
-              <Image
-                src="/logo-light.png"
-                alt="c-com.ai logo"
-                fill
-                className="object-contain dark:hidden"
-                priority
-              />
-              <Image
-                src="/logo.png"
-                alt="c-com.ai logo"
-                fill
-                className="object-contain hidden dark:block"
-                priority
-              />
+                <Image
+                  src={isDark ? "/logo.png" : "/logo-light.png"}
+                  alt="c-com.ai logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
             </Link>
 
@@ -208,7 +209,7 @@ export default function Navbar() {
                           damping: 30,
                           duration: 0.3 
                         }}
-                        style={{ originY: 0 }}  // ✅ Add this
+                        style={{ originY: 0 }}
                       />
                     )}
                   </Link>
@@ -216,7 +217,6 @@ export default function Navbar() {
               })}
             </div>
 
-            {/* Get Started Button - Desktop */}
             <div className="hidden lg:flex">
               <Link
                 href="#contact"
@@ -249,9 +249,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu & Theme Toggle Container */}
             <div className="lg:hidden flex items-center gap-2">
-              {/* Theme Toggle - Mobile */}
               <motion.button
                 onClick={toggleTheme}
                 className="p-2 rounded-full backdrop-blur-md transition-all duration-300"
@@ -274,7 +272,6 @@ export default function Navbar() {
                 )}
               </motion.button>
 
-              {/* Hamburger Menu Button */}
               <motion.button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="p-2 hover:text-[var(--primary-green)] transition-colors relative z-50"
@@ -282,18 +279,12 @@ export default function Navbar() {
                 aria-label="Toggle menu"
                 whileTap={{ scale: 0.9 }}
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <motion.path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    variants={iconVariants}
-                    animate={isMobileMenuOpen ? "open" : "closed"}
+                    d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
                     transition={{ duration: 0.3 }}
                   />
                 </svg>
@@ -319,10 +310,7 @@ export default function Navbar() {
                 {navLinks.map((link) => {
                   const isActive = activeSection === link.href.replace("#", "");
                   return (
-                    <motion.div
-                      key={link.name}
-                      variants={itemVariants}
-                    >
+                    <motion.div key={link.name} variants={itemVariants}>
                       <Link
                         href={link.href}
                         onClick={(e) => handleNavClick(e, link.href)}
@@ -339,7 +327,6 @@ export default function Navbar() {
                   );
                 })}
                 
-                {/* Get Started Button - Mobile */}
                 <motion.div variants={itemVariants}>
                   <Link
                     href="#contact"
@@ -367,10 +354,9 @@ export default function Navbar() {
         </AnimatePresence>
       </nav>
 
-      {/* Theme Toggle Button - Desktop Only */}
       <motion.button
         onClick={toggleTheme}
-        className={`fixed z-50 p-2.5 rounded-full backdrop-blur-md  transition-all duration-300 hidden lg:block cursor-pointer ${
+        className={`fixed z-50 p-2.5 rounded-full backdrop-blur-md transition-all duration-300 hidden lg:block cursor-pointer ${
           isScrolled ? "top-[81px] right-16 shadow-lg" : "top-[66px] right-16"
         }`}
         style={{

@@ -1,8 +1,15 @@
 'use client'
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Footer() {
+    const [isDark, setIsDark] = useState(() => {
+      if (typeof window === 'undefined') return true;
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      return savedTheme ? savedTheme === "dark" : prefersDark;
+    });
   return (
     <footer className="relative backdrop-blur-md overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       {/* Top Border - Fades on sides */}
@@ -28,19 +35,12 @@ export default function Footer() {
               className="flex items-center -ml-[18px]"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <div className="bg-transparent relative w-24 h-24 md:w-32 md:h-32 transition-all duration-300">
+              <div className=" bg-transparent relative w-24 h-24 md:w-32 md:h-32 transition-all duration-300">
               <Image
-                src="/logo-light.png"
+                src={!isDark ? "/logo.png" : "/logo-light.png"}
                 alt="c-com.ai logo"
                 fill
-                className="object-contain dark:hidden"
-                priority
-              />
-              <Image
-                src="/logo.png"
-                alt="c-com.ai logo"
-                fill
-                className="object-contain hidden dark:block"
+                className="object-contain"
                 priority
               />
             </div>

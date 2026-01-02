@@ -160,6 +160,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        
         {/* JSON-LD Structured Data */}
         <Script
           id="organization-schema"
