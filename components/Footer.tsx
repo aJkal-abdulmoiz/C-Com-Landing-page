@@ -30,7 +30,7 @@ export default function Footer() {
             >
               <div className="bg-transparent relative w-24 h-24 md:w-32 md:h-32 transition-all duration-300">
                 <Image
-                  src="/logo-og.png"
+                  src="/logo.png"
                   alt="c-com.ai logo"
                   fill
                   className="object-contain"
