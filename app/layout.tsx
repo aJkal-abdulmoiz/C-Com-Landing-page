@@ -17,7 +17,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://c-com.ai"),
   title: {
-    default: "c-com.ai | Strategic Conversational AI Readiness for Leading Brands",
+    default: "Strategic Conversational AI Readiness for Leading Brands",
     template: "%s | c-com.ai"
   },
   description: "Strategic Conversational AI readiness for leading brands. Build durable competitive advantage through AI-powered conversational commerce, AI discovery optimization, and enterprise AI implementation.",
