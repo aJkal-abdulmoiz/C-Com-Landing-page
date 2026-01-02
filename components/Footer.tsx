@@ -29,14 +29,21 @@ export default function Footer() {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <div className="bg-transparent relative w-24 h-24 md:w-32 md:h-32 transition-all duration-300">
-                <Image
-                  src="/logo.png"
-                  alt="c-com.ai logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+              <Image
+                src="/logo-light.png"
+                alt="c-com.ai logo"
+                fill
+                className="object-contain dark:hidden"
+                priority
+              />
+              <Image
+                src="/logo.png"
+                alt="c-com.ai logo"
+                fill
+                className="object-contain hidden dark:block"
+                priority
+              />
+            </div>
             </Link>
             
             <div className="space-y-2 text-sm ">
