@@ -171,12 +171,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             <Link 
               href="#hero" 
-              className="flex items-center "
+              className="flex items-center md:-ml-[18px] -ml-[6px]"
               onClick={(e) => handleNavClick(e, "#hero")}
             >
               <div className="bg-transparent relative w-32 h-32 md:w-42 md:h-42 transition-all duration-300">
                 <Image
-                  src="/logo.png"
+                  src="/Logo.png"
                   alt="c-com.ai logo"
                   fill
                   className="object-contain"
