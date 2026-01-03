@@ -157,13 +157,13 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed w-full z-40 transition-all duration-400 ease-in-out ${
-          isScrolled ? "top-[65px]" : "top-[50px]"
+          isScrolled ? "top-[65px]" : "top-[52px]"
         }`}
       >
         <div 
-          className={`mx-auto px-4 md:px-6 transition-all duration-500 ease-in-out ${
+          className={`mx-auto px-1 md:px-6 transition-all duration-500 ease-in-out ${
             isScrolled 
-              ? "md:max-w-4xl max-w-[95%] backdrop-blur-[10px] rounded-2xl border-0 shadow-xl" 
+              ? "md:max-w-4xl max-w-[95%] backdrop-blur-[10px] rounded-2xl border-0 shadow-xl px-4 md:px-6" 
               : "max-w-[95%] md:max-w-[75rem] bg-transparent"
           }`}
           style={isScrolled ? { backgroundColor: 'var(--navbar-bg)' } : {}}
