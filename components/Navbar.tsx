@@ -176,7 +176,7 @@ export default function Navbar() {
             >
               <div className="bg-transparent relative w-32 h-32 md:w-42 md:h-42 transition-all duration-300">
                 <Image
-                  src="/Logo.png"
+                  src="/logo.png"
                   alt="c-com.ai logo"
                   fill
                   className="object-contain"
