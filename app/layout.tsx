@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://c-com.ai",
     siteName: "c-com.ai",
-    title: "c-com.ai | Strategic Conversational AI Readiness for Leading Brands",
+    title: "Strategic Conversational AI Readiness for Leading Brands",
     description: "Build durable competitive advantage through AI-powered conversational commerce. Expert consulting for enterprise AI strategy, implementation, and organizational readiness.",
     images: [
       {
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@c_com_ai",
     creator: "@farazsiddiqui",
-    title: "c-com.ai | Strategic Conversational AI Readiness for Leading Brands",
+    title: "Strategic Conversational AI Readiness for Leading Brands",
     description: "Build durable competitive advantage through AI-powered conversational commerce. Expert consulting for enterprise AI strategy and implementation.",
     images: ["/logo-og.png"],
   },
