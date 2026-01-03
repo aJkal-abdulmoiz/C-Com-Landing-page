@@ -143,7 +143,7 @@ html {
   width: 100%;
   max-width: 500px;
   min-height: 400px;
-  max-height: 450px;
+  max-height: 480px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -185,7 +185,7 @@ html {
 @media (max-width: 640px) {
   .c-com-solution-card-compact {
     max-width: 100%;
-    min-height: 450px;
+    min-height: 480px;
   }
 }
 
