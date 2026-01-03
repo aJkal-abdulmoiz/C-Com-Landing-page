@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     description: "Build durable competitive advantage through AI-powered conversational commerce. Expert consulting for enterprise AI strategy, implementation, and organizational readiness.",
     images: [
       {
-        url: "/logo-og.png",
+        url: "/Logo-og.png",
         width: 1200,
         height: 630,
         alt: "c-com.ai - Strategic Conversational AI Consulting & Implementation",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     creator: "@farazsiddiqui",
     title: "Strategic Conversational AI Readiness for Leading Brands",
     description: "Build durable competitive advantage through AI-powered conversational commerce. Expert consulting for enterprise AI strategy and implementation.",
-    images: ["/logo-og.png"],
+    images: ["/Logo-og.png"],
   },
   alternates: {
     canonical: "https://c-com.ai",
@@ -112,7 +112,7 @@ export default function RootLayout({
     "url": "https://c-com.ai",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://c-com.ai/logo-og.png",
+      "url": "https://c-com.ai/Logo-og.png",
       "width": 1200,
       "height": 630
     },
