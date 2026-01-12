@@ -145,37 +145,28 @@ export default function FutureConversationalSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="space-y-5"
+            className="space-y-1 mt-[-20px]"
           >
             <motion.p
               variants={textVariants}
               className="text-[15px] md:text-base leading-[1.7]"
               style={{ color: 'var(--text-primary)', opacity: 0.85 }}
             >
-              eCommerce is undergoing a <span className="font-medium" style={{ color: 'var(--text-primary)', opacity: 1 }}>seismic shift</span> in the way people discover, compare and buy products.
+              <span className="font-bold">eCommerce is undergoing a seismic shift</span> in the way people discover, compare and buy products. What once began as a Google search moved to social media scrolling, and is now entering a new phase defined by conversational interfaces.
             </motion.p>
             <motion.p
               variants={textVariants}
               className="text-[15px] md:text-base leading-[1.7]"
               style={{ color: 'var(--text-primary)', opacity: 0.85 }}
             >
-              Digital journey that started with a Google search, first moved to Social media and now entering the next era of{" "}
-              <span className="font-medium" style={{ color: 'var(--text-primary)', opacity: 1 }}>conversational interfaces</span> - the Large Language Models.
+              <span className="font-bold">Platforms like ChatGPT have evolved</span> into a search engine, a product discovery platform and a check out experience - all inside a single conversation. 
             </motion.p>
             <motion.p
               variants={textVariants}
               className="text-[15px] md:text-base leading-[1.7]"
               style={{ color: 'var(--text-primary)', opacity: 0.85 }}
             >
-              ChatGPT is evolving into a <span className="font-medium" style={{ color: 'var(--text-primary)', opacity: 1 }}>search engine, a product discovery platform and a checkout experience</span> - All inside one conversation.
-            </motion.p>
-            <motion.p
-              variants={textVariants}
-              className="text-[15px] md:text-base leading-[1.7]"
-              style={{ color: 'var(--text-primary)', opacity: 0.85 }}
-            >
-              For Brands and Businesses, this changes the rule to stay{" "}
-              <span className="font-medium" style={{ color: 'var(--text-primary)', opacity: 1 }}>visible, relevant and competitive</span>.
+              <span className="font-bold">This changes the rules for brands</span> to stay visible, relevant and competitive.
             </motion.p>
           </motion.div>
 
@@ -265,7 +256,7 @@ export default function FutureConversationalSection() {
                 >
                   {step.icon}
                 </motion.div>
-                <p className="text-base md:text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+                <p className="text-base md:text-lg font-bold mb-2 leading-tight" style={{ color: 'var(--text-primary)' }}>
                   {step.label}
                 </p>
                 <p className="text-sm md:text-[15px] leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.8 }}>

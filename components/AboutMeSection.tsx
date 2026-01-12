@@ -35,9 +35,9 @@ export default function AboutMeSection() {
           <polyline points="22 4 12 14.01 9 11.01" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
-      title: "Value creation Focus",
+      title: "Builder of durable advantage",
       description:
-        "Building sustainable advantage through systematic readiness, not short-term demonstrations.",
+        "Building sustainable advantage through systematic readiness, not demos and pilots.",
     },
   ];
 
@@ -172,24 +172,24 @@ export default function AboutMeSection() {
             className="space-y-6"
           >
             <h3 className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>
-            I build for the shift through experience and execution
+            I build for the shift through experience, not theory.
             </h3>
 
             <div className="space-y-4 text-sm md:text-base leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.8 }}>
               <p>
-                I work with Leadership teams to operationalize conversational AI - moving it from concept to capability.
+              <span className="font-bold">I work with leadership teams to turn conversational AI into a real capability.</span> That means moving past demos and pilots, and making AI create value. Tools alone don’t create advantage;  operating models, incentives and decision-making do. 
               </p>
               <p>
-                My experience sits at the interaction of <b>Technology</b>, <b>Business outcomes</b> and <b>Human behavior</b>.
+              <span className="font-bold">I focus on organizational, strategic and cultural readiness.</span> My background sits at the intersection of business outcomes, technology and human behavior. I’ve seen what happens when these three align, and when they don’t.
               </p>
               <p>
-                I replace hype with organizational, strategic and cultural readiness, focusing on what makes AI stick inside organizations.
+              <span className="font-bold">The leaders I work with aren’t looking to experiment for the sake of it.</span> They want clarity, direction, and durable advantage. 
               </p>
               <p>
-                The proof of my approach lies in execution: scaling a tech startup early in my career, and establishing eCommerce as a true competitive advantage in enterprise settings.
+              <span className="font-bold">Earlier in my career,</span> I scaled a tech startup. And later built eCommerce into a true competitive advantage inside a large, complex organization. 
               </p>
               <p className="font-medium" style={{ color: 'var(--text-primary)', opacity: 1 }}>
-                The leaders I work with want more than demos and pilot projects. They&apos;re building durable advantage through conversational interfaces.
+              <span className="font-bold">Today, I’m focused on helping businesses win conversational interfaces</span> as the primary way customers discover, decide and engage. 
               </p>
             </div>
           </motion.div>

@@ -13,12 +13,9 @@ export default function Hero() {
                 <br />
                 <span className="gradient-text">Conversational AI?</span>
               </h1>
-              <div className="space-y-2 text-lg md:text-xl leading-relaxed text-left" style={{ color: 'var(--text-primary)', opacity: 0.9 }}>
-                <p>Search interfaces are fading.</p>
-                <p>Traditional media models are becoming obsolete.</p>
-                <p>eCommerce is giving way to conversational commerce.</p>
-                <p>AI-driven interactions are rising.</p>
-                <p>Those who adapt now will lead tomorrow&apos;s markets.</p>
+              <div className="space-y-1 text-lg md:text-xl leading-relaxed text-left" style={{ color: 'var(--text-primary)', opacity: 0.9 }}>
+                <p>This isn’t a choice, it’s a readiness challenge. Search interfaces are fading, traditional media models are becoming obsolete, and eCommerce is giving way to conversational commerce.</p>
+                <p>Start by understanding where you stand and then deciding how you want to lead.</p>
               </div>
             </div>
 
@@ -27,9 +24,8 @@ export default function Hero() {
               {/* Primary Button - White Gradient */}
               <a 
                 href="#framework"
-                className="group inline-flex items-center justify-center space-x-2 px-6 py-3 text-black text-sm font-semibold rounded-[10px] backdrop-blur-[5px] border-0 transition-all duration-300"
+                className="group inline-flex items-center bg-gradient-to-br from-[var(--primary-green)] to-[#076b6d] justify-center space-x-2 px-6 py-3 text-white text-sm font-semibold rounded-[10px] backdrop-blur-[5px] border-0 transition-all duration-300"
                 style={{
-                  background: 'linear-gradient(180deg, rgb(240, 240, 240) 0%, rgb(220, 220, 220) 100%)',
                   boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
                   filter: 'brightness(0.95)'
                 }}
@@ -43,10 +39,9 @@ export default function Hero() {
               {/* Secondary Button - Dark with Subtle Border */}
               <a 
                 href="#contact"
-                className="inline-flex items-center justify-center space-x-2 px-6 py-3 text-sm font-semibold rounded-[10px] backdrop-blur-[5px] border transition-all duration-300 hover:border-white/20"
+                className="inline-flex text-black items-center justify-center space-x-2 px-6 py-3 text-sm font-semibold rounded-[10px] backdrop-blur-[5px] border transition-all duration-300 hover:border-white/20"
                 style={{
-                  color: 'var(--text-primary)',
-                  background: 'var(--card-bg)',
+                  background: 'linear-gradient(180deg, rgb(240, 240, 240) 0%, rgb(220, 220, 220) 100%)',
                   boxShadow: 'rgba(255, 255, 255, 0.9) 0px 0.602187px 0.602187px -1.58333px inset, rgba(255, 255, 255, 0.74) 0px 2.28853px 2.28853px -3.16667px inset, rgba(255, 255, 255, 0.05) 0px 10px 10px -4.75px inset',
                   borderColor: 'var(--border-color)'
                 }}

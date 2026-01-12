@@ -23,6 +23,12 @@ export default function IdeasEssaysSection() {
       description: "The next generation of commerce will be driven by conversations and contexts.",
       link: "https://substack.com/@farazsid/p-178233888",
     },
+    {
+      image: "https://substackcdn.com/image/fetch/$s_!gW0S!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa75fe2b6-058a-4015-a511-594243cce5f8_1456x816.png",
+      title: "Beyond Keywords: How Moments of Meaning will shape Discovery in AI era.",
+      description: "How Conversational AI is re-writing the playbook Brands use to win Search.",
+      link: "https://farazsid.substack.com/p/beyond-keywords-why-moments-of-meaning",
+    },
   ];
 
   const containerVariants: Variants = {

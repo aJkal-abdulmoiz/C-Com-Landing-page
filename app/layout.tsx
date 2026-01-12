@@ -17,10 +17,10 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://c-com.ai"),
   title: {
-    default: "Strategic Conversational AI Readiness for Leading Brands",
+    default: "Conversational AI Readiness for your Business",
     template: "%s | c-com.ai"
   },
-  description: "Strategic Conversational AI readiness for leading brands. Build durable competitive advantage through AI-powered conversational commerce, AI discovery optimization, and enterprise AI implementation.",
+  description: "Conversational AI Readiness for your Business. Build durable competitive advantage through AI-powered conversational commerce, AI discovery optimization, and enterprise AI implementation.",
   keywords: [
     "Conversational AI",
     "AI Strategy Consulting",
@@ -59,25 +59,25 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://c-com.ai",
     siteName: "c-com.ai",
-    title: "Strategic Conversational AI Readiness for Leading Brands",
-    description: "Build durable competitive advantage through AI-powered conversational commerce. Expert consulting for enterprise AI strategy, implementation, and organizational readiness.",
+    title: "Conversational AI Readiness for your Business",
+    description: "Build durable competitive advantage for the era of conversational AI . Expert advisory practice for strategy, implementation and organizational readiness.",
     images: [
       {
-        url: "/logo-og.png",
-        width: 1200,
-        height: 630,
-        alt: "c-com.ai - Strategic Conversational AI Consulting & Implementation",
+        url: "/logo-social.png",
+        width: 768,
+        height: 768,
+        alt: "Strategic Conversational AI Consulting & Implementation",
         type: "image/png",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     site: "@c_com_ai",
     creator: "@farazsiddiqui",
-    title: "Strategic Conversational AI Readiness for Leading Brands",
-    description: "Build durable competitive advantage through AI-powered conversational commerce. Expert consulting for enterprise AI strategy and implementation.",
-    images: ["/logo-og.png"],
+    title: "Conversational AI Readiness for your Business",
+    description: "Build durable competitive advantage for the era of conversational AI . Expert advisory practice for strategy, implementation and organizational readiness.",
+    images: ["/logo-social.png"],
   },
   alternates: {
     canonical: "https://c-com.ai",
@@ -112,15 +112,15 @@ export default function RootLayout({
     "url": "https://c-com.ai",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://c-com.ai/logo-og.png",
-      "width": 1200,
-      "height": 630
+      "url": "https://c-com.ai/logo-social.png",
+      width: 768,
+      height: 768,
     },
-    "description": "Strategic Conversational AI readiness consulting for leading brands. Expert guidance on AI-powered conversational commerce and enterprise AI implementation.",
+    "description": "Build durable competitive advantage for the era of conversational AI . Expert advisory practice for strategy, implementation and organizational readiness. ",
     "founder": {
       "@type": "Person",
       "name": "Faraz Siddiqui",
-      "jobTitle": "Conversational AI Strategist",
+      "jobTitle": "Growth & Scale Operator | Global Expertise",
       "url": "https://www.linkedin.com/in/faraz-siddiqui-4189692/"
     },
     "areaServed": "Global",
@@ -129,7 +129,8 @@ export default function RootLayout({
       "AI Strategy Development",
       "Enterprise AI Implementation",
       "Conversational Commerce Strategy",
-      "AI Organizational Readiness"
+      "AI Organizational Readiness",
+      "Conversational Commerce"
     ],
     "sameAs": [
       "https://www.linkedin.com/in/faraz-siddiqui-4189692/",
@@ -150,7 +151,7 @@ export default function RootLayout({
     "@id": "https://c-com.ai/#website",
     "url": "https://c-com.ai",
     "name": "c-com.ai",
-    "description": "Strategic Conversational AI readiness for leading brands",
+    "description": "Conversational AI Readiness for your Business",
     "publisher": {
       "@id": "https://c-com.ai/#organization"
     },

@@ -15,7 +15,7 @@ export default function PitfallsSection() {
         "Rushing to 'keep up' produces activities, not outcomes. Speed without purpose can make advantage disappear.",
     },
     {
-      title: "Deferring Governance Until Failure",
+      title: "Deferring Governance until Failure",
       description:
         "Late guardrails increase risk and slow progress. Governance must evolve alongside capability.",
     },
@@ -260,7 +260,7 @@ export default function PitfallsSection() {
 
                 {/* Card content */}
                 <div className="relative z-10 h-full flex flex-col p-6">
-                  <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+                  <h3 className="text-base md:text-lg font-bold leading-tight mb-4" style={{ color: 'var(--text-primary)' }}>
                     {pitfall.title}
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.7 }}>
