@@ -51,12 +51,12 @@ export default function Footer() {
       ></div>
 
       <div className="relative max-w-[75rem] mx-auto px-6 py-6">
-        <div className="flex md:flex-row justify-between items-start gap-8">
+        <div className="flex md:flex-row flex-col justify-between  items-center md:items-start gap-8">
           {/* Left Side - Logo & Contact */}
           <div className="space-y-4">
             <Link
               href="#hero"
-              className="flex items-center -ml-[18px]"
+              className="flex items-center md:-ml-[10px]"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <div className="bg-transparent relative w-24 h-24 md:w-32 md:h-32 transition-all duration-300">
