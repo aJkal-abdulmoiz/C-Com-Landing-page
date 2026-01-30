@@ -300,6 +300,7 @@ export default function FutureConversationalSection() {
         <script
         src="https://app.noodleseed.com/embed.js"
         data-share-code="E2CQHYPC"
+        data-theme="auto"
         async
       ></script>
       )}
