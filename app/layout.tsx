@@ -60,13 +60,13 @@ export const metadata: Metadata = {
     url: "https://c-com.ai",
     siteName: "c-com.ai",
     title: "Conversational AI Readiness for your Business",
-    description: "Build durable competitive advantage for the era of conversational AI . Expert advisory practice for strategy, implementation and organizational readiness.",
+    description: "Build durable competitive advantage for the era of conversational AI.",
     images: [
       {
         url: "/logo-social.png",
         width: 768,
         height: 768,
-        alt: "Strategic Conversational AI Consulting & Implementation",
+        alt: "Conversational AI Readiness for your Business",
         type: "image/png",
       },
     ],
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     site: "@c_com_ai",
     creator: "@farazsiddiqui",
     title: "Conversational AI Readiness for your Business",
-    description: "Build durable competitive advantage for the era of conversational AI . Expert advisory practice for strategy, implementation and organizational readiness.",
+    description: "Build durable competitive advantage for the era of conversational AI.",
     images: ["/logo-social.png"],
   },
   alternates: {
@@ -116,7 +116,7 @@ export default function RootLayout({
       width: 768,
       height: 768,
     },
-    "description": "Build durable competitive advantage for the era of conversational AI . Expert advisory practice for strategy, implementation and organizational readiness. ",
+    "description": "Build durable competitive advantage for the era of conversational AI. ",
     "founder": {
       "@type": "Person",
       "name": "Faraz Siddiqui",

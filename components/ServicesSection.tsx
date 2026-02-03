@@ -185,7 +185,7 @@ export default function ServicesSection() {
                     whileTap={{ scale: 0.98 }}
                     className="c-com-solution-button"
                   >
-                    Find out more
+                    Set up Discovery Call
                   </motion.a>
                 </div>
               </motion.div>

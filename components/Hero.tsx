@@ -11,10 +11,10 @@ export default function Hero() {
               <h1 className="text-4xl md:text-5xl lg:text-[58px] font-bold leading-tight mb-4 pt-8 md:mt-0">
                 <span style={{ color: 'var(--text-primary)' }}>Is your Business ready for</span>
                 <br />
-                <span className="gradient-text">Conversational AI?</span>
+                <span className="gradient-text">Conversational Interfaces?</span>
               </h1>
               <div className="space-y-1 text-lg md:text-xl leading-relaxed text-left" style={{ color: 'var(--text-primary)', opacity: 0.9 }}>
-                <p>This isn’t a choice, it’s a readiness challenge. Search interfaces are fading, traditional media models are becoming obsolete, and eCommerce is giving way to conversational commerce.</p>
+                <p>Search interfaces are fading, traditional media models are becoming obsolete, and eCommerce is giving way to conversational commerce.</p>
                 <p>Start by understanding where you stand and then deciding how you want to lead.</p>
               </div>
             </div>

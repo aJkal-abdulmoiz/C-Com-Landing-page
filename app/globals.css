@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+::selection {
+  background-color: #199fa4;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #199fa4;
+  color: #ffffff;
+}
 :root {
   --background: #080a0d;
   --text-primary: #e5e7eb;
@@ -404,12 +413,14 @@ html {
 
 :root.dark .ideas-essay-card {
   background: linear-gradient(145deg, rgba(10, 9, 10, 0.6), rgba(10, 9, 10, 0.4));
-  border: 1.5px solid #1a1a1a;
+  border: 2px solid #1a1a1a;
+  border-color: rgba(6, 188, 189, 0.5);
 }
 
 :root.light .ideas-essay-card {
   background: linear-gradient(145deg, rgba(249, 250, 251, 0.8), rgba(249, 250, 251, 0.6));
-  border: 1.5px solid rgba(6, 188, 189, 0.2);
+  border: 2px solid rgba(6, 188, 189, 0.2);
+  border-color: rgba(6, 188, 189, 0.5);
 }
 
 .ideas-essay-card:hover {
@@ -524,6 +535,7 @@ html {
 .contact-form-card {
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
+  
 }
 
 :root.dark .contact-form-card {
@@ -884,3 +896,4 @@ html {
 .delay-400 {
   animation-delay: 0.4s;
 }
+

@@ -2,8 +2,11 @@
 
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 
 export default function IdeasEssaysSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const articles = [
     {
       image: "https://substackcdn.com/image/fetch/w_600,h_300,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0bd6d9b8-fccc-4968-b91a-e0c11e6731db_612x306.png",
@@ -28,6 +31,12 @@ export default function IdeasEssaysSection() {
       title: "Beyond Keywords: How Moments of Meaning will shape Discovery in AI era.",
       description: "How Conversational AI is re-writing the playbook Brands use to win Search.",
       link: "https://farazsid.substack.com/p/beyond-keywords-why-moments-of-meaning",
+    },
+    {
+      image: "https://substackcdn.com/image/fetch/$s_!YJYQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffdcefd2a-531e-47ad-a6f1-c3cc39751387_1536x1024.png",
+      title: "ChatGPT is doing to Search, what Search did to Physical Stores.",
+      description: "What the rise of Conversational interfaces mean for discovery, websites and brand presence.",
+      link: "https://farazsid.substack.com/p/chatgpt-is-doing-to-search-what-search",
     },
   ];
 
@@ -55,6 +64,16 @@ export default function IdeasEssaysSection() {
         ease: [0.25, 0.1, 0.25, 1],
       },
     },
+  };
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = 400;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -120,75 +139,108 @@ export default function IdeasEssaysSection() {
             where I write regularly about Conversational Commerce and the evolving relationship between humans & agents.
           </motion.p>
 
-          {/* Article Cards Grid */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {articles.map((article, idx) => (
-              <motion.a
-                key={idx}
-                href={article.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                variants={cardVariants}
-                className="ideas-essay-card group cursor-pointer"
-              >
-                {/* Image header */}
-                <div className="relative h-48 w-full overflow-hidden rounded-t-xl essay-card-border">
-                  <motion.div
-                    initial={{ scale: 1.2, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.6,
-                      delay: 0.4 + idx * 0.1,
-                      ease: [0.25, 0.1, 0.25, 1],
-                    }}
-                    className="relative w-full h-full"
-                  >
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      unoptimized
-                    />
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </motion.div>
-                </div>
+          {/* Slider Container */}
+          <div className="relative">
+            {/* Left Arrow */}
+            <button
+              onClick={() => scroll("left")}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-[var(--primary-green)] hover:bg-[var(--primary-green)]/80 text-white p-3 rounded-full shadow-lg transition-all duration-300 -ml-4 hidden md:block"
+              aria-label="Scroll left"
+            >
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
 
-                {/* Content area */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary-green)] transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
-                    {article.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-primary)', opacity: 0.7 }}>
-                    {article.description}
-                  </p>
+            {/* Right Arrow */}
+            <button
+              onClick={() => scroll("right")}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-[var(--primary-green)] hover:bg-[var(--primary-green)]/80 text-white p-3 rounded-full shadow-lg transition-all duration-300 -mr-4 hidden md:block"
+              aria-label="Scroll right"
+            >
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
 
-                  {/* Read link with arrow */}
-                  <div className="flex items-center gap-2 text-[var(--primary-green)] text-sm font-medium">
-                    <span>Read on Substack</span>
-                    <svg
-                      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
+            {/* Article Cards Slider */}
+            <motion.div
+              ref={scrollRef}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth pb-4 md:mx-[50px]"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {articles.map((article, idx) => (
+                <motion.a
+                  key={idx}
+                  href={article.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variants={cardVariants}
+                  className="ideas-essay-card group cursor-pointer flex-shrink-0 w-[85vw] md:w-[380px] snap-center"
+                >
+                  {/* Image header */}
+                  <div className="relative h-48 w-full overflow-hidden rounded-t-xl essay-card-border">
+                    <motion.div
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.6,
+                        delay: 0.4 + idx * 0.1,
+                        ease: [0.25, 0.1, 0.25, 1],
+                      }}
+                      className="relative w-full h-full"
                     >
-                      <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        unoptimized
+                      />
+                      {/* Gradient overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </motion.div>
                   </div>
-                </div>
-              </motion.a>
-            ))}
-          </motion.div>
+
+                  {/* Content area */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary-green)] transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
+                      {article.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-primary)', opacity: 0.7 }}>
+                      {article.description}
+                    </p>
+
+                    {/* Read link with arrow */}
+                    <div className="flex items-center gap-2 text-[var(--primary-green)] text-sm font-medium">
+                      <span>Read on Substack</span>
+                      <svg
+                        className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  </div>
+                </motion.a>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 }

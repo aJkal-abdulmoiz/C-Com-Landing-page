@@ -172,7 +172,7 @@ export default function AboutMeSection() {
             className="space-y-6"
           >
             <h3 className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>
-            I build for the shift through experience, not theory.
+            I help businesses be discovered by AI, and humans using AI.
             </h3>
 
             <div className="space-y-4 text-sm md:text-base leading-relaxed" style={{ color: 'var(--text-primary)', opacity: 0.8 }}>

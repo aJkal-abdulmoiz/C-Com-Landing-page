@@ -65,14 +65,15 @@ export default function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className={`fixed pointer-events-none z-[9999] rounded-full mix-blend-screen transition-all duration-200 ease-out ${
+      className={`fixed pointer-events-none z-[9999] rounded-full transition-all duration-200 ease-out ${
         isHovering
-          ? "w-8 h-8 bg-transparent border-2 border-[#06bcbd]"
-          : "w-4 h-4 bg-[#06bcbd]"
+          ? "w-8 h-8 bg-transparent border-2 border-[#06bcbd] dark:border-[#06bcbd] "
+          : "w-4 h-4 bg-[#06bcbd] dark:bg-[#06bcbd] "
       }`}
       style={{
         transform: "translate(-50%, -50%)",
         willChange: "transform",
+        mixBlendMode: "normal",
       }}
     />
   );
