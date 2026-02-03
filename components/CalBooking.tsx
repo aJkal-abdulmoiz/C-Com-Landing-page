@@ -64,7 +64,7 @@ export default function CalBooking() {
   
 
   return (
-    <section className="md:py-12 py-8 px-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
+    <section id="meeting" className="md:py-12 py-8 px-4 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-[65rem] mx-auto relative">
         {/* Header */}
         <div className="text-center mb-12">
@@ -75,7 +75,7 @@ export default function CalBooking() {
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-            Book Your Consultation
+            Book Your Discover Call
           </h2>
           
           <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-primary)', opacity: 0.8 }}>

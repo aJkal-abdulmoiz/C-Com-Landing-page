@@ -180,7 +180,7 @@ export default function ServicesSection() {
 
                   {/* Button */}
                   <motion.a
-                    href="#contact"
+                    href="#meeting"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="c-com-solution-button"
