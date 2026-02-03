@@ -75,7 +75,7 @@ export default function CalBooking() {
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-            Book Your Discover Call
+            Book Your Discovery Call
           </h2>
           
           <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-primary)', opacity: 0.8 }}>
