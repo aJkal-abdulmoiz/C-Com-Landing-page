@@ -170,7 +170,7 @@ export default function Navbar() {
         >
           <div className="flex items-center justify-between h-16">
             <Link 
-              href="#hero" 
+              href="/" 
               className="flex items-center md:-ml-[18px] -ml-[6px]"
               onClick={(e) => handleNavClick(e, "#hero")}
             >
