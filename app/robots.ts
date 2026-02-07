@@ -3,25 +3,100 @@ import { MetadataRoute } from 'next'
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      // Default rule - explicitly allow /ai
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/ai', '/ai/*'],
         disallow: [
-          '/api/',           // Block API routes from indexing
-          '/admin/',         // Block admin pages if you have any
-          '/*?*utm_*',       // Block URLs with UTM parameters
+          '/api/',
+          '/admin/',
+          '/_next/',
         ],
       },
+      
+      // Google Search + AI
       {
         userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/api/'],
+        allow: ['/', '/ai', '/ai/*'],
+        disallow: ['/api/', '/admin/'],
       },
       {
+        userAgent: 'Google-Extended',
+        allow: ['/', '/ai', '/ai/*'],  // Explicit /ai access
+      },
+      {
+        userAgent: 'GoogleOther',
+        allow: ['/', '/ai', '/ai/*'],
+      },
+      
+      // Bing + Copilot
+      {
         userAgent: 'Bingbot',
-        allow: '/',
-        disallow: ['/api/'],
-        crawlDelay: 2,     // Bing respects crawl delay (Google ignores it)
+        allow: ['/', '/ai', '/ai/*'],
+        disallow: ['/api/', '/admin/'],
+        crawlDelay: 1,
+      },
+      
+      // OpenAI (ChatGPT) - CRITICAL
+      {
+        userAgent: 'GPTBot',
+        allow: ['/', '/ai', '/ai/*'],  // Explicit /ai access
+      },
+      {
+        userAgent: 'ChatGPT-User',
+        allow: ['/', '/ai', '/ai/*'],  // Browsing mode
+      },
+      
+      // Anthropic (Claude)
+      {
+        userAgent: 'Claude-Web',
+        allow: ['/', '/ai', '/ai/*'],
+      },
+      {
+        userAgent: 'claudebot',
+        allow: ['/', '/ai', '/ai/*'],
+      },
+      {
+        userAgent: 'anthropic-ai',
+        allow: ['/', '/ai', '/ai/*'],
+      },
+      
+      // Perplexity AI
+      {
+        userAgent: 'PerplexityBot',
+        allow: ['/', '/ai', '/ai/*'],
+      },
+      
+      // Common Crawl (used by many AI models)
+      {
+        userAgent: 'CCBot',
+        allow: ['/', '/ai', '/ai/*'],
+      },
+      
+      // Cohere AI
+      {
+        userAgent: 'cohere-ai',
+        allow: ['/', '/ai', '/ai/*'],
+      },
+      
+      // Meta AI
+      {
+        userAgent: 'FacebookBot',
+        allow: ['/', '/ai', '/ai/*'],
+      },
+      {
+        userAgent: 'Meta-ExternalAgent',
+        allow: ['/', '/ai', '/ai/*'],
+      },
+      
+      // Additional AI crawlers
+      {
+        userAgent: 'Diffbot',
+        allow: ['/', '/ai', '/ai/*'],
+      },
+      {
+        userAgent: 'ImagesiftBot',
+        allow: ['/', '/ai', '/ai/*'],
       },
     ],
     sitemap: 'https://c-com.ai/sitemap.xml',
