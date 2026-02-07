@@ -142,10 +142,46 @@ export default function AIPage() {
             </table>
           </div>
 
-          <div className="space-y-2 text-sm mt-4">
-            <p><strong>Affirmation Moments:</strong> Consumer validates existing choice. Example: &quot;Is this shampoo safe for daily use?&quot;</p>
-            <p><strong>Discovery Moments:</strong> Consumer navigates category. Example: &quot;What should I consider when choosing a moisturizer?&quot;</p>
-            <p><strong>Evaluation Moments:</strong> Consumer reconsiders defaults. Example: &quot;What alternatives work better for my needs?&quot;</p>
+          {/* Detailed Moment Descriptions */}
+          <div className="space-y-4 text-sm mt-6">
+            <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800">
+              <p className="font-semibold mb-2">Affirmation Moments</p>
+              <ul className="space-y-1 text-xs">
+                <li><strong>Conversational equivalent of:</strong> Branded keywords</li>
+                <li><strong>Consumer state:</strong> Already has preference or habit</li>
+                <li><strong>Core question:</strong> &quot;Am I making the right choice?&quot;</li>
+                <li><strong>What consumers need:</strong> Reassurance, trust, risk reduction</li>
+                <li><strong>How brands win:</strong> Being clear, credible, emotionally steady</li>
+                <li><strong>Key principle:</strong> Consistency matters more than persuasion</li>
+                <li><strong>Example query:</strong> &quot;Is this shampoo safe for daily use?&quot; or &quot;Is it suitable for a child?&quot;</li>
+              </ul>
+            </div>
+
+            <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800">
+              <p className="font-semibold mb-2">Discovery Moments</p>
+              <ul className="space-y-1 text-xs">
+                <li><strong>Conversational equivalent of:</strong> Category keywords</li>
+                <li><strong>Consumer state:</strong> Curious, forming mental map of category</li>
+                <li><strong>Core question:</strong> &quot;What are my options and trade-offs?&quot;</li>
+                <li><strong>What consumers need:</strong> Education, guidance, understanding</li>
+                <li><strong>How brands win:</strong> Acting as helpful educators rather than aggressive sellers</li>
+                <li><strong>Key principle:</strong> Guide thinking, don&apos;t just list options</li>
+                <li><strong>Example query:</strong> &quot;What should I consider when choosing a moisturizer for humid weather?&quot;</li>
+              </ul>
+            </div>
+
+            <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800">
+              <p className="font-semibold mb-2">Evaluation Moments</p>
+              <ul className="space-y-1 text-xs">
+                <li><strong>Conversational equivalent of:</strong> Competitor keywords</li>
+                <li><strong>Consumer state:</strong> Reconsidering defaults, reacting to friction</li>
+                <li><strong>Core question:</strong> &quot;What else might fit better now?&quot;</li>
+                <li><strong>What consumers need:</strong> Honest contextualization of alternatives</li>
+                <li><strong>How brands win:</strong> Demonstrating situational fit over bold claims</li>
+                <li><strong>Key principle:</strong> Contextual relevance beats generic superiority claims</li>
+                <li><strong>Example query:</strong> &quot;I&apos;m disappointed with my current laptop for video editing, what alternatives work better for travel?&quot;</li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -155,6 +191,8 @@ export default function AIPage() {
           <p className="text-sm mb-3">
             <strong>Core Thesis:</strong> Every major interface shift redefines how customers discover brands and how businesses must establish presence.
           </p>
+
+          <p className="text-sm font-semibold mb-2 mt-4">Three Historical Interface Shifts:</p>
 
           <div className="overflow-x-auto mb-4 mt-3">
             <table className="w-full text-xs border-collapse border border-gray-300 dark:border-gray-600">
@@ -193,13 +231,23 @@ export default function AIPage() {
             </table>
           </div>
 
-          <div className="text-sm space-y-1 mt-4">
-            <p><strong>Behavioral Evolution:</strong></p>
-            <ul className="list-disc pl-5 space-y-0.5 text-sm mt-2">
-              <li>Physical Era: &quot;Be on the shelf, or you don&apos;t exist&quot;</li>
-              <li>Search Era: &quot;Have a website, or you don&apos;t exist&quot;</li>
-              <li>Conversation Era: &quot;Be cited by AI, or you don&apos;t exist&quot;</li>
-            </ul>
+          <div className="text-sm space-y-3 mt-4">
+            <div>
+              <p className="font-semibold mb-1">Behavioral Evolution:</p>
+              <ul className="list-disc pl-5 space-y-0.5 text-sm mt-2">
+                <li><strong>Physical Era:</strong> &quot;Be on the shelf, or you don&apos;t exist&quot;</li>
+                <li><strong>Search Era:</strong> &quot;Have a website, or you don&apos;t exist&quot;</li>
+                <li><strong>Conversation Era:</strong> &quot;Be cited by AI, or you don&apos;t exist&quot;</li>
+              </ul>
+            </div>
+
+            <div className="mt-4">
+              <p className="font-semibold mb-1">User Behavior Patterns:</p>
+              <ul className="list-disc pl-5 space-y-0.5 text-sm mt-2">
+                <li><strong>Search Era:</strong> Search → Click → Browse → Repeat</li>
+                <li><strong>Conversation Era:</strong> Prompt → Response → Repeat</li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -211,23 +259,30 @@ export default function AIPage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-4 text-sm mt-4">
-            <div className="border border-gray-300 dark:border-gray-600 rounded p-3 dark:bg-gray-800">
+            <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800">
               <p className="font-semibold mb-2 text-sm">PIM (Product Information Management)</p>
               <ul className="space-y-1 text-xs">
                 <li><strong>Era:</strong> eCommerce (2010s)</li>
-                <li><strong>Purpose:</strong> Structure product data</li>
-                <li><strong>Optimized for:</strong> Product pages, SEO</li>
-                <li><strong>Limitation:</strong> Cannot tell stories</li>
+                <li><strong>Purpose:</strong> Bring structure to chaotic product data</li>
+                <li><strong>Optimized for:</strong> Product detail pages, SEO, attributes, channel syndication</li>
+                <li><strong>Strength:</strong> Delivers facts and data</li>
+                <li><strong>Limitation:</strong> Cannot tell stories or provide context; assumes browse-based discovery</li>
               </ul>
             </div>
 
-            <div className="border border-gray-300 dark:border-gray-600 rounded p-3 dark:bg-gray-800">
+            <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800">
               <p className="font-semibold mb-2 text-sm">PxM (Product Experience Management)</p>
               <ul className="space-y-1 text-xs">
                 <li><strong>Era:</strong> Conversational Commerce (2020s+)</li>
-                <li><strong>Purpose:</strong> Manage product meaning</li>
-                <li><strong>Optimized for:</strong> AI conversations</li>
-                <li><strong>Capability:</strong> Context-aware content</li>
+                <li><strong>Purpose:</strong> Manage product meaning, not just data</li>
+                <li><strong>Optimized for:</strong> AI-mediated conversations, contextual recommendations</li>
+              </ul>
+              <p className="font-semibold mt-2 mb-1 text-xs">Core Capabilities:</p>
+              <ul className="space-y-0.5 text-xs pl-3">
+                <li>• Turns attributes into machine-ready product knowledge</li>
+                <li>• Captures relationships, use cases, benefits, constraints, brand voice</li>
+                <li>• Generates consistent, context-appropriate content</li>
+                <li>• Feeds AI agents with facts, nuance, and contextual intelligence</li>
               </ul>
             </div>
           </div>
@@ -248,13 +303,18 @@ export default function AIPage() {
             <strong>Definition:</strong> Increasing the likelihood a brand is introduced, referenced, or relied upon inside AI-powered conversational systems.
           </p>
 
-          <div className="text-sm space-y-2 mt-4">
+          <div className="text-sm space-y-3 mt-4">
             <div>
               <p className="font-semibold mb-1">Key Distinction from SEO:</p>
               <ul className="list-disc pl-5 text-sm mt-2">
                 <li><strong>SEO:</strong> Optimizes for rank and traffic</li>
                 <li><strong>GEO:</strong> Optimizes for resonance and contextual relevance</li>
               </ul>
+            </div>
+
+            <div className="mt-4">
+              <p className="font-semibold mb-1">Common Mistake:</p>
+              <p className="text-sm mt-1">Treating GEO as &quot;SEO, but louder&quot; (more content, broader keyword coverage)</p>
             </div>
 
             <div className="mt-4">
@@ -267,19 +327,27 @@ export default function AIPage() {
             </div>
 
             <p className="text-sm mt-4">
-              <strong>Core Principle:</strong> Conversational AI assembles responses based on situational fit, not phrase matching.
+              <strong>Core Principle:</strong> Conversational AI doesn&apos;t retrieve content because it matches phrases; it assembles responses because it recognizes situational fit.
             </p>
+
+            <div className="mt-4">
+              <p className="font-semibold mb-1">Investment Strategy:</p>
+              <ul className="list-disc pl-5 text-sm mt-2">
+                <li><strong>Traditional Search:</strong> Budget followed keyword volume</li>
+                <li><strong>Conversational AI:</strong> Investment follows moment frequency and emotional intensity</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div className="mb-8 mt-6">
           <h3 className="text-base font-semibold mb-2">Conversational Presence Requirements</h3>
 
-          <div className="text-sm space-y-2 mt-4">
+          <div className="text-sm space-y-3 mt-4">
             <div>
               <p className="font-semibold mb-1">What it&apos;s NOT:</p>
               <ul className="list-disc pl-5 mt-2">
-                <li>Adding a chatbot widget</li>
+                <li>Adding a chatbot widget to website</li>
                 <li>Creating FAQ pages</li>
                 <li>Tree-based conversation flows</li>
               </ul>
@@ -288,10 +356,35 @@ export default function AIPage() {
             <div className="mt-4">
               <p className="font-semibold mb-1">What it IS:</p>
               <ul className="list-disc pl-5 mt-2">
-                <li>Structured, authoritative product knowledge</li>
+                <li>Product knowledge that is structured, clear, and authoritative</li>
                 <li>Brand positioning legible to AI systems</li>
-                <li>Understanding context of customer discovery</li>
+                <li>Understanding the context of customer discovery</li>
+                <li>Accurately assembled responses to various intent states</li>
               </ul>
+            </div>
+
+            <div className="mt-6">
+              <p className="font-semibold mb-2">Implementation Components:</p>
+              
+              <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800 mt-3">
+                <p className="font-semibold text-sm mb-2">1. ChatGPT Apps (via Model Context Protocol)</p>
+                <ul className="space-y-1 text-xs">
+                  <li><strong>Purpose:</strong> Structured repository AI systems can understand</li>
+                  <li><strong>Function:</strong> Establishes brand authority in conversational systems</li>
+                  <li><strong>Analogy:</strong> MCP guides AI in conversation era like HTTP guided browsing in search era</li>
+                  <li><strong>Benefit:</strong> Enables brand to be present where conversations happen (inside LLMs)</li>
+                </ul>
+              </div>
+
+              <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800 mt-3">
+                <p className="font-semibold text-sm mb-2">2. Conversational Website Interface</p>
+                <ul className="space-y-1 text-xs">
+                  <li><strong>Evolution:</strong> From search bar to conversation box</li>
+                  <li><strong>Shift:</strong> From &quot;What page are you looking for?&quot; to &quot;What are you trying to accomplish?&quot;</li>
+                  <li><strong>Purpose:</strong> Align owned digital experience with emerging user behavior</li>
+                  <li><strong>Result:</strong> Website becomes source of truth for conversational systems</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -301,31 +394,40 @@ export default function AIPage() {
       <section className="mb-12 mt-10">
         <h2 className="text-lg font-semibold mb-4">Key Insights & Principles</h2>
 
-        <div className="space-y-4 text-sm mt-6">
+        <div className="space-y-5 text-sm mt-6">
           <div>
-            <p className="font-semibold mb-1">On Consumer Behavior</p>
+            <p className="font-semibold mb-2">On Consumer Behavior</p>
             <ul className="list-disc pl-5 space-y-1 mt-2">
-              <li><strong>Search Limitation:</strong> Keywords don&apos;t capture why someone searched</li>
-              <li><strong>Hidden Truth:</strong> Same keywords, different emotional states—conversational AI understands this</li>
-              <li><strong>Current Shift:</strong> Product pages becoming last formality before checkout</li>
+              <li><strong>Search Limitation:</strong> &quot;The keyword interface doesn&apos;t care why someone searched, it only cares what has been typed&quot;</li>
+              <li><strong>Hidden Truth:</strong> &quot;Two people may type the same keyword and be in entirely different emotional states. Search flattens that difference. Conversational AI does not.&quot;</li>
+              <li><strong>Current Shift:</strong> The product page is no longer first touch; it&apos;s becoming the last formality before checkout</li>
             </ul>
           </div>
 
-          <div className="mt-6">
-            <p className="font-semibold mb-1">On Content Strategy</p>
+          <div className="mt-5">
+            <p className="font-semibold mb-2">On Content Strategy</p>
             <ul className="list-disc pl-5 space-y-1 mt-2">
-              <li><strong>Search Era:</strong> Presence at keyword collision points</li>
-              <li><strong>Conversation Era:</strong> Legibility across Moments of Meaning</li>
-              <li><strong>New Unit:</strong> From keyword to Moment of Meaning</li>
+              <li><strong>Search Era:</strong> Winning requires presence at keyword collision points</li>
+              <li><strong>Conversation Era:</strong> Winning requires legibility across different Moments of Meaning</li>
+              <li><strong>New Unit:</strong> Optimization shifted from keyword to Moment of Meaning</li>
             </ul>
           </div>
 
-          <div className="mt-6">
-            <p className="font-semibold mb-1">On Business Adaptation</p>
+          <div className="mt-5">
+            <p className="font-semibold mb-2">On AI Systems</p>
             <ul className="list-disc pl-5 space-y-1 mt-2">
-              <li><strong>Search Era:</strong> Better tools (PIM, SEO)</li>
-              <li><strong>Conversation Era:</strong> Better thinking (Moments of Meaning, PxM)</li>
-              <li><strong>Historical Pattern:</strong> Delayed adaptation causes relevance loss</li>
+              <li><strong>Capability:</strong> AI distinguishes emotional and situational states even when surface questions look the same</li>
+              <li><strong>Requirement:</strong> AI needs deeper semantic understanding, not just keyword matching</li>
+              <li><strong>Quality Loop:</strong> Better product knowledge → Smarter AI behavior → More customer trust</li>
+            </ul>
+          </div>
+
+          <div className="mt-5">
+            <p className="font-semibold mb-2">On Business Adaptation</p>
+            <ul className="list-disc pl-5 space-y-1 mt-2">
+              <li><strong>Search Era:</strong> Progress came from better tools (PIM, SEO)</li>
+              <li><strong>Conversation Era:</strong> Progress comes from better thinking (Moments of Meaning, PxM)</li>
+              <li><strong>Historical Pattern:</strong> Businesses that delayed previous presence shifts lost relevance; same applies to conversational presence</li>
             </ul>
           </div>
         </div>
@@ -334,27 +436,41 @@ export default function AIPage() {
       {/* Practical Example */}
       <section className="mb-12 mt-10">
         <h2 className="text-lg font-semibold mb-3">Practical Applications</h2>
-        <p className="text-base font-semibold mb-2 mt-4">Shampoo Example</p>
+        <p className="text-base font-semibold mb-2 mt-4">Shampoo Example (Illustrating Moments of Meaning)</p>
         <p className="text-sm mb-3">Same Surface Query, Different Moments:</p>
 
-        <div className="space-y-3 text-sm mt-4">
-          <div className="border border-gray-300 dark:border-gray-600 rounded p-3 dark:bg-gray-800">
-            <p className="font-semibold mb-1">Affirmation Moment</p>
-            <p className="italic text-xs mb-1">&quot;Is this shampoo safe for daily use?&quot;</p>
-            <p className="text-xs">Brand response: Clear narratives, trust signals</p>
+        <div className="space-y-4 text-sm mt-4">
+          <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800">
+            <p className="font-semibold mb-2">Affirmation Moment</p>
+            <p className="italic text-xs mb-2">&quot;Is this shampoo safe for daily use? Is it suitable for a child?&quot;</p>
+            <ul className="space-y-1 text-xs mt-2">
+              <li>• Consumer validates existing choice</li>
+              <li>• Brand response: Clear narratives, trust signals, unambiguous positioning</li>
+            </ul>
           </div>
 
-          <div className="border border-gray-300 dark:border-gray-600 rounded p-3 dark:bg-gray-800">
-            <p className="font-semibold mb-1">Discovery Moment</p>
-            <p className="italic text-xs mb-1">&quot;What should I consider when choosing shampoo?&quot;</p>
-            <p className="text-xs">Brand response: Act as guide, explain category</p>
+          <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800">
+            <p className="font-semibold mb-2">Discovery Moment</p>
+            <p className="italic text-xs mb-2">&quot;What should I consider when choosing shampoo for damaged hair?&quot;</p>
+            <ul className="space-y-1 text-xs mt-2">
+              <li>• Consumer navigates category and trade-offs</li>
+              <li>• Brand response: Act as guide, explain how to think about category</li>
+            </ul>
           </div>
 
-          <div className="border border-gray-300 dark:border-gray-600 rounded p-3 dark:bg-gray-800">
-            <p className="font-semibold mb-1">Evaluation Moment</p>
-            <p className="italic text-xs mb-1">&quot;My shampoo isn&apos;t working, what&apos;s better?&quot;</p>
-            <p className="text-xs">Brand response: Contextual alternatives</p>
+          <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800">
+            <p className="font-semibold mb-2">Evaluation Moment</p>
+            <p className="italic text-xs mb-2">&quot;My current shampoo isn&apos;t working well anymore, what might work better?&quot;</p>
+            <ul className="space-y-1 text-xs mt-2">
+              <li>• Consumer reconsiders default after disappointment</li>
+              <li>• Brand response: Surface alternatives with contextual fit explanation</li>
+            </ul>
           </div>
+        </div>
+
+        <div className="mt-5 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded">
+          <p className="text-sm font-semibold mb-1">Strategic Implication:</p>
+          <p className="text-xs">The brand showing up as &quot;gentle and trusted&quot; in affirmation, &quot;clear and educational&quot; in discovery, and &quot;empathetic and adaptive&quot; in evaluation will outperform one repeating same benefits everywhere.</p>
         </div>
       </section>
 
@@ -364,7 +480,7 @@ export default function AIPage() {
         <p className="text-sm font-semibold mb-2 mt-4">Questions to Ask About GEO Investment</p>
 
         <div className="grid md:grid-cols-2 gap-4 text-sm mt-4">
-          <div className="border border-gray-300 dark:border-gray-600 rounded p-3 dark:bg-gray-800">
+          <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800">
             <p className="font-semibold mb-2 text-xs">Traditional Approach (Incomplete):</p>
             <ul className="list-disc pl-5 text-xs space-y-0.5">
               <li>How many pages do we have?</li>
@@ -373,12 +489,13 @@ export default function AIPage() {
             </ul>
           </div>
 
-          <div className="border border-gray-300 dark:border-gray-600 rounded p-3 dark:bg-gray-800">
+          <div className="border border-gray-300 dark:border-gray-600 rounded p-4 dark:bg-gray-800">
             <p className="font-semibold mb-2 text-xs">Moments of Meaning Approach (Complete):</p>
             <ul className="list-disc pl-5 text-xs space-y-0.5">
               <li>Are we credible when someone seeks reassurance?</li>
               <li>Are we useful when someone is learning?</li>
               <li>Are we contextually appropriate?</li>
+              <li>Which moments happen frequently vs. carry decisive weight?</li>
               <li>Where should we invest depth vs. breadth?</li>
             </ul>
           </div>
@@ -389,17 +506,23 @@ export default function AIPage() {
       <section className="mb-12 mt-10">
         <h2 className="text-lg font-semibold mb-3">Historical Context</h2>
 
-        <div className="space-y-3 text-sm mt-6">
+        <div className="space-y-4 text-sm mt-6">
           <div>
-            <p className="font-semibold mb-1">eCommerce Challenge (2014-2016)</p>
-            <p><strong>Problem:</strong> Chaotic product data across markets</p>
-            <p><strong>Solution:</strong> PIM/DAM systems</p>
+            <p className="font-semibold mb-2">eCommerce Challenge (2014-2016)</p>
+            <ul className="list-disc pl-5 text-sm space-y-1">
+              <li><strong>Problem:</strong> Chaotic spreadsheets, inconsistent product data across markets</li>
+              <li><strong>Solution:</strong> PIM/DAM systems brought structure</li>
+              <li><strong>Lesson:</strong> &quot;Every major shift in commerce requires a shift in how product information is managed&quot;</li>
+            </ul>
           </div>
 
-          <div className="mt-4">
-            <p className="font-semibold mb-1">Current Parallel (2024-2026)</p>
-            <p><strong>Problem:</strong> Content optimized for crawling, not conversation</p>
-            <p><strong>Solution:</strong> PxM systems + Conversational interfaces</p>
+          <div className="mt-5">
+            <p className="font-semibold mb-2">Current Parallel (2024-2026)</p>
+            <ul className="list-disc pl-5 text-sm space-y-1">
+              <li><strong>Problem:</strong> Static content optimized for crawling, not conversation</li>
+              <li><strong>Solution:</strong> PxM systems + Conversational interfaces</li>
+              <li><strong>Pattern Recognition:</strong> History repeating with different technology layer</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -408,31 +531,36 @@ export default function AIPage() {
       <section className="mb-12 mt-10">
         <h2 className="text-lg font-semibold mb-3">Future Outlook</h2>
 
-        <div className="text-sm space-y-2 mt-6">
-          <p className="font-semibold">Predictions</p>
-          <ul className="list-disc pl-5 space-y-1 mt-2">
-            <li>Websites remain but won&apos;t be the final interface</li>
-            <li>Conversations become the decision layer</li>
-            <li>Question shifts to: &quot;Do customers discover us in AI conversations?&quot;</li>
-          </ul>
+        <div className="text-sm space-y-4 mt-6">
+          <div>
+            <p className="font-semibold mb-2">Predictions</p>
+            <ul className="list-disc pl-5 space-y-1 mt-2">
+              <li>Websites won&apos;t vanish but will no longer be the final interface</li>
+              <li>Conversations will become the decision layer of the internet</li>
+              <li>The question shifts from &quot;Do customers discover us when they search?&quot; to &quot;Do customers discover us in conversations with AI?&quot;</li>
+            </ul>
+          </div>
 
-          <p className="font-semibold mt-4">For Brands</p>
-          <ul className="list-disc pl-5 space-y-1 mt-2">
-            <li>Early investment creates compounding advantage</li>
-            <li>Delay causes increasing absence where decisions form</li>
-            <li>Winners rethink relationship with product information</li>
-          </ul>
+          <div className="mt-5">
+            <p className="font-semibold mb-2">For Brands</p>
+            <ul className="list-disc pl-5 space-y-1 mt-2">
+              <li>Those investing now gain compounding advantage</li>
+              <li>Delay won&apos;t cause immediate vanishing but increasing absence where decisions form</li>
+              <li>Winners will be brands that rethink their relationship with product information</li>
+            </ul>
+          </div>
         </div>
       </section>
 
       {/* Terminology */}
       <section className="mb-12 mt-10">
         <h2 className="text-lg font-semibold mb-3">Terminology Reference</h2>
-        <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-sm mt-4">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm mt-4">
           <p><strong>GEO:</strong> Generative Engine Optimization</p>
           <p><strong>SEO:</strong> Search Engine Optimization</p>
           <p><strong>PIM:</strong> Product Information Management</p>
           <p><strong>PxM:</strong> Product Experience Management</p>
+          <p><strong>DAM:</strong> Digital Asset Management</p>
           <p><strong>MCP:</strong> Model Context Protocol</p>
           <p><strong>LLM:</strong> Large Language Model</p>
         </div>
@@ -444,6 +572,7 @@ export default function AIPage() {
         <div className="text-sm space-y-1 mt-4">
           <p><strong>Website:</strong> <a href="https://c-com.ai" className="text-blue-600 dark:text-blue-400 hover:underline">https://c-com.ai</a></p>
           <p><strong>Author:</strong> Faraz Siddiqui (<a href="https://substack.com/@farazsid" className="text-blue-600 dark:text-blue-400 hover:underline">@farazsid</a>)</p>
+          <p><strong>Domain:</strong> Conversational Commerce, AI-Driven Discovery, Generative Engine Optimization</p>
         </div>
       </section>
 
@@ -467,6 +596,7 @@ export default function AIPage() {
           <p><strong>What is C-COM.AI:</strong> Strategic consulting and framework development for brands transitioning from search-based to conversation-based commerce.</p>
           <p><strong>Core Frameworks:</strong> Moments of Meaning (Affirmation, Discovery, Evaluation), Interface Evolution (Physical → Search → Conversational), Product Experience Management (PxM).</p>
           <p><strong>Key Insight:</strong> Conversational AI requires optimizing for contextual relevance across different emotional states, not keyword matching.</p>
+          <p><strong>Thought Leadership:</strong> This knowledge base represents thought leadership on the transition from search-based to conversation-based commerce, with frameworks designed to help brands navigate AI-driven discovery and establish conversational presence.</p>
           <p><strong>Get Started:</strong> <a href="https://c-com.ai" className="text-blue-600 dark:text-blue-400 hover:underline">https://c-com.ai</a></p>
         </div>
       </section>
